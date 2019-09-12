@@ -8,11 +8,10 @@ let myAge: number = 27;
 // Your height in meters as a number
 let myHeight: number = 1.83;
 // Whether you are married or not as a boolean
-let married: boolean = true;
-let notMarried: boolean = false;
+let married: boolean = 1 - 0 == 1;
 
 console.log("My name is " + myName + ". I am " + myAge + " years old. I am " + myHeight + "m tall.");
-if (married && notMarried) {
+if (married = false) {
     console.log("I am married.");
   } else {
     console.log("I am not married yet.");

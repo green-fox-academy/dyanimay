@@ -4,5 +4,5 @@ let myNum2: number = 13;
 console.log(myNum1 + "+" + myNum2 + "=" + (myNum1 + myNum2));
 console.log(myNum2 + "-" + myNum1 + "=" + (myNum2 - myNum1));
 console.log(myNum1 + "*" + myNum2 + "=" + (myNum1 * myNum2));
-console.log(myNum1 + "/" + myNum2 + "=" + (myNum1 / myNum2));
+console.log(myNum1 + "/" + myNum2 + "=" + (myNum1 / myNum2).toFixed(2) + "%");
 console.log("maradt: " + (myNum1 % myNum2));

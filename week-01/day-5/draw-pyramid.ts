@@ -1,13 +1,11 @@
-function renderPyramid(n) {
-    for (var i = 0; i < n; i++) {
-      var str = '';
-      for (var j = 1; j < n-i; j++) {
+let lineNumber = 5;
+    for (let i = 0; i < lineNumber; i++) {
+      let str = '';
+      for (let j = 1; j < lineNumber-i; j++) {
         str = str + ' ';
       }
-      for (var k = 1; k <= (2*i+1); k++) {
+      for (let k = 1; k <= (2*i+1); k++) {
         str = str + '*';
       }
       console.log(str);
     }
-  }
-  renderPyramid(5)

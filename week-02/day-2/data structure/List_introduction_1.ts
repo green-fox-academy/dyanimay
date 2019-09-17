@@ -49,9 +49,10 @@ for (let whatever = 0; whatever < names.length; whatever++) {
 //Iterate through the list in a reversed order and print out each name
 //Amanda
 //William
-for (let switch = 0; switch < names.length; switch++) {
-    console.log(names.reverse[switch];
+let names2 = names.reverse();
+for (let Swap = 0; Swap < names2.length; Swap++) {
+    console.log(names2[Swap]);
 }
 //Remove all elements
-names.splice(0);
-console.log(names);
+names2.splice(0);
+console.log(names2);

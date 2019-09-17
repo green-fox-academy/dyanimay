@@ -47,7 +47,8 @@ function print(text: string){
 
 array.forEach(print);
 
-array.forEach(function(element){	    console.log("anonymus: " + element);
+array.forEach(function(element){	    
+    console.log("anonymus: " + element);
 });	
 array.forEach(element => console.log("lambda: " + element));
 	

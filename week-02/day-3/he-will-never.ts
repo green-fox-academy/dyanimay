@@ -17,8 +17,8 @@ let hashmap = {
   3: 'say goodbye '
 };
 
-notSoCrypticMessage.forEach(function(elem){
-    out = out.concat(hashmap[elem]);
-})
+notSoCrypticMessage.forEach(function(elem){ //a notSoCryptic mindegyik elemén átmegy (forEach) és csinál valamit épp az adott számmal (elem)
+    out = out.concat(hashmap[elem]); //először fogja az out-ot, ami üres és mellérakja(concat) a hashmap adott elemét (1)
+}) //aztán továbbmegy, fogja a 12-es elemet és a már létező out (never gonna van benne) után rakja a 12es számnak megfelelő szöveget a hashmapból
 
 console.log(out)

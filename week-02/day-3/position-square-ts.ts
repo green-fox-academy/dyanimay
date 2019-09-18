@@ -16,6 +16,6 @@ function squares (x, y){
     ctx.fillRect(x, y, 50, 50);
 }
 for (let i:number = 0; i < 3; i++){
-    let l = i * 60
+    let l = i * 50
     squares(l,l)
 }

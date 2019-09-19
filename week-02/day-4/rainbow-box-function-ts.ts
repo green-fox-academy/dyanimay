@@ -10,12 +10,12 @@ const ctx = canvas.getContext('2d');
 // and draws a square of that size and color to the center of the canvas.
 // Create a loop that fills the canvas with a rainbow of colored squares.
 function rainbow(x:number, y: number){
-    ctx.fillStyle = `rgb(${Math.floor(255 - y)}, ${Math.floor(3 * y)}, 0)`;
+    ctx.fillStyle = `rgb(${Math.floor(205 - y)}, ${Math.floor(3 * y)}, ${Math.floor(y * y)})`;
     ctx.fillRect(canvas.width/2-x/2, canvas.height/2-x/2, x, x);
 }
 for (let i:number = 8; 0 < i; i--){
     let x = i * 50;
-    let y = i * 10;
+    let y = Math.random() * i * 10;
     rainbow(x, y);
 }/*
 let y = 10

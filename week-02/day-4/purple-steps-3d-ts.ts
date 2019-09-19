@@ -10,11 +10,11 @@ const ctx = canvas.getContext('2d');
 
 function rainbowGrow(x:number, y:number){
     ctx.fillStyle = 'purple';
-    ctx.fillRect(x * (y / 2), x * (y / 2), y, y);
-    ctx.strokeRect(x * (y / 2), x * (y / 2), y, y);
+    ctx.fillRect(x * y / 2, x * y / 2, y, y);
+    ctx.strokeRect(x * y / 2, x * y / 2, y, y);
     }
-    let y = 10;
+    let y = 5;
     for (let x: number = 1; x <= 6; x++){
-        y = y + 10;
+        y = y + 5;
         rainbowGrow(x, y);
     }

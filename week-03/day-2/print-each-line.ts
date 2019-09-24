@@ -4,8 +4,9 @@
 // then it should print the following error message: "Unable to read file: my-file.txt"
 const fs = require('fs');
 try {
-let fileContent = fs.readFileSync('my-file.txt', 'utf-8');
-console.log(fileContent);
+    let fileContent = fs.readFileSync('my-file.txt', 'utf-8');
+    let Print = fileContent.split ('\n')
+    console.log(Print);
 }
 catch(error) {
     console.log('Unable to read file: my-file.txt');

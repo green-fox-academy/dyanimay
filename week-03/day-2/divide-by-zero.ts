@@ -15,4 +15,4 @@ function divideByTen(Parameter: number){
         console.log('Fail');
     }
 }
-divideByTen(2);
+divideByTen(0);

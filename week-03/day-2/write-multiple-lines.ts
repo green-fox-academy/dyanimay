@@ -21,7 +21,7 @@ function writeMultipleLines(path: string, word: string, lineNumber: number) {
     console.log('Do not raise any error');
   }
 }
-//let path = 'my-file.txt';
-//let word = 'I have to study more';
-//let lineNumer = 10;
+// let path = 'my-file.txt';
+// let word = 'I have to study more';
+// let lineNumer = 10;
 writeMultipleLines('my-file.txt', 'I have to study more', 10);

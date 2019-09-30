@@ -18,7 +18,7 @@ export class Garden {
         this._tree.push(treeToAdd);
     }
 
-    gardenWatering (){
+    gardenWatering (waterAmount: number){ //waterAmount is 40 and 70 in the exam case
         let needWater = 0;
 
         for (let i:number = 0; i < this._tree.length; i++){ //we iterate through the number of trees are in the garden
@@ -36,6 +36,19 @@ export class Garden {
                 console.log('The ' + this._flower[j]._color + ' flower needs water.');
             } else {
                 console.log('The ' + this._flower[j]._color + ' flower doesn\'t need water.');
+            }
+        }
+
+        console.log('\nWatering with ' + waterAmount);
+        for (let k:number = 0; k < this._tree.length; k++){
+            if (this._tree[k]._waterLevel < 10){
+                this._tree[k]._waterLevel += waterAmount / needWater * 0.4;
+            }
+        }
+
+        for (let l:number = 0; l < this._flower.length; l++){
+            if (this._flower[l]._waterLevel < 5){
+                this._flower[l]._waterLevel += waterAmount / needWater * 0.75;
             }
         }
     }

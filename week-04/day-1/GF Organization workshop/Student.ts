@@ -19,6 +19,6 @@ export class Student extends Person{
     }
 
     skipDays(numberOfDays?): void{
-        this.skipDays += numberOfDays;
+        this._skippedDays += numberOfDays; //here was a mistake because I wrote this.skipDays but the test.ts didn't work. 
     }
 }

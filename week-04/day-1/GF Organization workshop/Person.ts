@@ -10,7 +10,7 @@ export class Person {
     }
 
     protected introduce():void {
-        console.log('Hi, I\'m ' + this._name + ', a ' + this._age + 'year old ' + this._gender + '.');
+        console.log('Hi, I\'m ' + this._name + ', a ' + this._age + ' year old ' + this._gender + '.');
     }
 
     // protected specificGoal(): string {

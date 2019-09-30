@@ -3,11 +3,7 @@ const fs = require('fs');
 function writeMultipleLines(path: string, word: string, lineNumber: number) {
   try {
     for (let i = 0; i <= lineNumber; i++) {
-        if (i == lineNumber){
-            fs.appendFileSync(path, word, 'utf8');
-        } else {
-            fs.appendFileSync(path, `${word}\n`, 'utf8');
-        }
+        fs.writeFileSync(path, word, 'utf8');
     }
   } catch {
     console.log('Do not raise any error');

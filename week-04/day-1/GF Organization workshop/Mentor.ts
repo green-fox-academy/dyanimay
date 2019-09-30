@@ -16,6 +16,3 @@ export class Mentor extends Person{
         console.log('Hi, I\'m ' + this._name + ', a ' + this._age + ' year old ' + this._gender + ' ' + this._level + ' mentor.')
     }
 }
-let mentor1 = new Mentor ('alma', 16, 'female', 'intermediate');
-let mentor2 = new Mentor ();
-mentor2.introduce();

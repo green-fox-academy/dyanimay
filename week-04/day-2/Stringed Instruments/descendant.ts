@@ -2,8 +2,8 @@ import {Instrument} from './Instrument';
 import {StringedInstrument} from './StringedInstrument';
 
 export class ElectricGuitar extends StringedInstrument{
-    constructor (name: string = 'Electric Guitar', numberOfStrings: number = 6){
-        super(name, numberOfStrings);
+    constructor (numberOfStrings: number = 6, name: string = 'Electric Guitar'){
+        super(numberOfStrings, name);
     }
     protected sound (){
         return 'Twang';
@@ -11,8 +11,8 @@ export class ElectricGuitar extends StringedInstrument{
 }
 
 export class BassGuitar extends StringedInstrument{
-    constructor (name:string = 'Bass Guitar', numberOfStrings: number = 4){
-        super(name, numberOfStrings);
+    constructor (numberOfStrings: number = 4, name:string = 'Bass Guitar'){
+        super(numberOfStrings, name);
     }
     protected sound (){
         return 'Duum-duum-duum';
@@ -20,8 +20,8 @@ export class BassGuitar extends StringedInstrument{
 }
 
 export class Violin extends StringedInstrument{
-    constructor (name: string = 'Violin', numberOfStrings: number = 4){
-        super(name, numberOfStrings);
+    constructor (numberOfStrings: number = 4, name: string = 'Violin'){
+        super(numberOfStrings, name);
     }
     protected sound (){
         return 'Screech';

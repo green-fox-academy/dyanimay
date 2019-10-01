@@ -1,10 +1,11 @@
-import {Instrument} from './Instrument';
-import {StringedInstrument} from './StringedInstrument';
+import {ElectricGuitar} from './descendant'
+import {BassGuitar} from './descendant'
+import {Violin} from './descendant'
 
 console.log(
     'Test 1, create Electric Guitar, Bass Guitar and Violin with default strings.'
   );
-  let guitar = new ElectricGuitar();
+  let guitar = new ElectricGuitar(); //the class name (ElectricGuitar) is already given so we name the class like that in descendant file
   let bassGuitar = new BassGuitar();
   let violin = new Violin();
   

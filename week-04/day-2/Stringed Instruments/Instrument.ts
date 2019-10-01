@@ -5,5 +5,5 @@ export abstract class Instrument {
         this._name = name;
     }
 
-    protected play(): void{}
+    protected play(): void{} //we don't write anything here because we don't know the play funciont yet - implementaton yet unknown
 }

@@ -8,7 +8,7 @@ export abstract class StringedInstrument extends Instrument{
         this._numberOfStrings = numberOfString;
     }
 
-    protected sound(): void{
+    protected sound(): void{ //we dont write anything here because we don't know the sounds yet - implementation yet unknown
     }
 
     play () {

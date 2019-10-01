@@ -1,4 +1,4 @@
-import { Animal } from "../Zoo/animal";
+import { Animal } from "../Zoo/animal"; //
 
 //import {Bird, animal} from '../Zoo/animal' //double dot because we have to go back by one folder
 
@@ -28,14 +28,14 @@ class Helicopter extends Vehicle implements Flyable { //how to extend from Vehic
     console.log('Prepare for landing.');
   }
   public fly(): void {
-    console.log('We are flying high.')
+    console.log('We are flying high.');
   }
   public takeOff(): void {
-    console.log('Prepare for take off.')
+    console.log('Prepare for take off.');
   }
 
   constructor(name: string, color: string, seatNumber: number, doorNumber: number) {
-    super()
+    super();
   }
 }
 let BlackHawk = new Helicopter('Black Hawk', 'brown', 6, 5);
@@ -43,13 +43,13 @@ BlackHawk.land();
 
 export class Bird extends Animal implements Flyable {
 
-  public land(): void { };
+  public land(): void { }
 
-  public fly(): void { };
+  public fly(): void { }
 
-  public takeOff(): void { };
+  public takeOff(): void { }
 
   breed(): string { //this is needed here
-    return ('laying eggs.')
+    return ('laying eggs.');
   }
 }

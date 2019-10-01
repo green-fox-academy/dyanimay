@@ -15,3 +15,9 @@ class Eagle implements FlyAble{
         console.log('Screeeech');
     }
 }
+
+function somethingWithAnEagle(eagle: Eagle){
+    eagle.Fly();
+    eagle.land();
+    eagle.speak();
+}

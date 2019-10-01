@@ -50,6 +50,6 @@ export class Bird extends Animal implements Flyable {
   public takeOff(): void { }
 
   breed(): string { //this is needed here
-    return ('laying eggs.');
+    return 'laying eggs.';
   }
 }

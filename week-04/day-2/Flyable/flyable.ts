@@ -9,11 +9,30 @@ abstract class Vehicle{
     protected _color: string;
     protected _seatNumber: number;
     protected _doorNumber: number;
+
+    // constructor(name: string, color: string, seatNumber: number, doorNumber: number){
+    //     this._name = name;
+    //     this._color = color;
+    //     this._seatNumber = seatNumber;
+    //     this._doorNumber = doorNumber;
+    // }
 }
 
-class Helicopter extends Vehicle{ //how to extend from Vehicle and inherit Flyable interface at the same time??
+class Helicopter extends Vehicle implements Flyable{ //how to extend from Vehicle and inherit Flyable interface at the same time??
+
+    public land():void { //it is void because the method does nothing, the land method doesn't return anything. console.log is != return
+        console.log('Prepare for landing.');
+    }
+    public fly(): void{
+        console.log('We are flying high.')
+    }
+    public takeOff():void{
+        console.log('Prepare for take off.')
+    }
 
     constructor(name: string, color: string, seatNumber: number, doorNumber: number){
-        super();
+        super()
     }
 }
+let BlackHawk = new Helicopter ('Black Hawk', 'brown', 6, 5);
+BlackHawk.land();

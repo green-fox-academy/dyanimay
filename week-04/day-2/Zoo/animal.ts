@@ -1,4 +1,4 @@
-export abstract class animal{
+export abstract class Animal{
     protected _name: string;
     protected _age: number;
     protected _legNumber: number;
@@ -18,7 +18,7 @@ export abstract class animal{
     abstract breed(): string; //if there is "abstract" it means we don't even want to give any meaning to this breed function, without abstract: void{} means that it is a function which does nothing.
 }
 
-export class Reptile extends animal{
+export class Reptile extends Animal{
     constructor(name: string){
         super(name);
     }
@@ -27,7 +27,7 @@ export class Reptile extends animal{
     }
 }
 
-export class Mammal extends animal{
+export class Mammal extends Animal{
     constructor(name: string){
         super(name);
     }
@@ -36,7 +36,7 @@ export class Mammal extends animal{
     }
 }
 
-export class Bird extends animal{
+export class Bird extends Animal{
     constructor(name: string){
         super(name);
     }

@@ -1,4 +1,4 @@
-import {animal, Reptile, Mammal, Bird} from './animal'
+import {Animal, Reptile, Mammal, Bird} from './animal'
 
 const reptile = new Reptile('Crocodile');
 const mammal = new Mammal('Koala');

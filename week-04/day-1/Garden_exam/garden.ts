@@ -22,7 +22,7 @@ export class Garden {
         let needWater = 0;
 
         for (let i:number = 0; i < this._tree.length; i++){ //we iterate through the number of trees are in the garden
-            if (this._tree[i]._waterLevel < 10){ //we check every single tree (i), whether they need water (below 5) or not
+            if (this._tree[i]._waterLevel < 10){ //we check every single tree (i), whether they need water (below 10) or not
                 needWater++; //if the condition is true, so they need water, then add +1 to needWater (the number of trees which need water)
                 console.log('The ' + this._tree[i]._color + ' tree needs water.');
             } else {
@@ -42,13 +42,19 @@ export class Garden {
         console.log('\nWatering with ' + waterAmount);
         for (let k:number = 0; k < this._tree.length; k++){
             if (this._tree[k]._waterLevel < 10){
+                console.log('The ' + this._tree[k]._color + ' tree needs water.');
                 this._tree[k]._waterLevel += waterAmount / needWater * 0.4;
+            } else {
+                console.log('The ' + this._tree[k]._color + ' tree doesn\'t need water.');
             }
         }
 
         for (let l:number = 0; l < this._flower.length; l++){
             if (this._flower[l]._waterLevel < 5){
+                console.log('The ' + this._flower[l]._color + ' flower needs water.');
                 this._flower[l]._waterLevel += waterAmount / needWater * 0.75;
+            } else {
+                console.log('The ' + this._flower[l]._color + ' flower doesn\'t need water.');
             }
         }
     }

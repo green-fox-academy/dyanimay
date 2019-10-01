@@ -53,3 +53,7 @@ export class Garden {
         }
     }
 }
+
+// abstract class Plant {
+//     protected abstract getType():string;
+// }

@@ -2,7 +2,8 @@ import * as test from 'tape'
 import {Apple} from './apples'
 import {List} from './sum'
 import {Anagram} from './anagram'
-import { CountLetter } from './countLetters';
+import { CountLetter } from './countLetters'
+import {fibonacci} from './fibonacci'
 
 test('1. test: write apple', t => {
   const apple1 = new Apple();
@@ -78,5 +79,15 @@ test('4. test: dictionary of letters', t => {
   let expected = JSON.stringify({ g: 1, r: 1, e: 2, n: 1, f: 1, o: 1, x: 1 }); //JSON.stringify converts anything to a string, so 2 strings will be the same
 
   t.equal(actual, expected);
+  t.end();
+});
+
+test('5. test: fibonacci number', t => {
+  const n = 5;
+
+  let actual = fibonacci(n);
+  let expected = 3;
+
+  t.equal(actual, expected, 'should return 3');
   t.end();
 });

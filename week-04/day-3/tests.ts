@@ -1,6 +1,7 @@
+import * as test from 'tape'
 import {Apple} from './apples'
 import {List} from './sum'
-import * as test from 'tape'
+import {Anagram} from './anagram'
 
 test('1. test: write apple', t => {
   const apple1 = new Apple();
@@ -53,5 +54,17 @@ test('2.3 test: sum multiple element array', t => {
   let expected = 39;
 
   t.equal(actual, expected, 'should return 35');
+  t.end();
+});
+
+test('3. test: anagram or not', t => {
+  const anagram1 = new Anagram();
+  const myWord1: string = 'het'; //myWord1=a in anagram.ts
+  const myWord2: string = 'the'; //myWord2=b in anagram.ts
+
+  let actual = anagram1.anagram(myWord1, myWord2);
+  let expected = true;
+
+  t.equal(actual, expected, 'should return true');
   t.end();
 });

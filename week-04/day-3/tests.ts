@@ -2,6 +2,7 @@ import * as test from 'tape'
 import {Apple} from './apples'
 import {List} from './sum'
 import {Anagram} from './anagram'
+import { CountLetter } from './countLetters';
 
 test('1. test: write apple', t => {
   const apple1 = new Apple();
@@ -66,5 +67,16 @@ test('3. test: anagram or not', t => {
   let expected = true;
 
   t.equal(actual, expected, 'should return true');
+  t.end();
+});
+
+test('4. test: dictionary of letters', t => {
+  const dictionary = new CountLetter();
+  const word = 'greenfox'
+
+  let actual = JSON.stringify(dictionary.counter(word)); //do the counter METHOD (function) for the word 'greenfox'
+  let expected = JSON.stringify({ g: 1, r: 1, e: 2, n: 1, f: 1, o: 1, x: 1 }); //JSON.stringify converts anything to a string, so 2 strings will be the same
+
+  t.equal(actual, expected);
   t.end();
 });

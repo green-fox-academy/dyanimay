@@ -13,4 +13,4 @@ test('write apple', t => {
 
   t.equal(actual, expected);
   t.end();
-})
+});

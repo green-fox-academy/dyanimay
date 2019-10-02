@@ -9,15 +9,12 @@ export class Person {
         this._height = height;
     }
 
-    protected specificIntroduction(): string {
-        return '';
+    protected specificIntroduction(): string{
+        return "";
     }
 
-    public introduce(): void {
-        console.log('Hi, my name is ' + this._name + '. I am ' + this._height + ' tall and ' + this._age + ' years old. ' + this.specificIntroduction())
+    public introduce(greet?: string): void{
+        console.log( (greet != undefined ? greet : "Hi") + ", my name is " + this._name + " I am " +
+                        this._height + " tall " + this._age + " old" + this.specificIntroduction());
     }
-
-    // public introduce(greet?: string): void {
-    //     console.log( (greet ? greet + ', my name is ' + this._name + '. I am ' + this._height + ' tall and ' + this._age + ' years old.')
-    // }
 }

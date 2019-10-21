@@ -10,7 +10,8 @@ body {
   padding: 0;
   margin: 0;
   align-items: center;
-  justify-content: space-between;
+  /*justify-content: space-between;*/
+  justify-content: space;
 }
 
 .item {
@@ -18,4 +19,5 @@ body {
   background: purple;
   height: 100px;
   width: 100px;
+  margin-right: 5px;
 }

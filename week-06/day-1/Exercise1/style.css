@@ -6,6 +6,7 @@ body {
 
 .container {
   display: flex;
+  background: #fff;
 }
 
 .item {
@@ -15,12 +16,15 @@ body {
 
 .green {
   background: green;
+  flex-grow: 1;
 }
 
 .yellow {
   background: yellow;
+  flex-grow: 2;
 }
 
 .purple {
   background: purple;
+  flex-grow: 1;
 }

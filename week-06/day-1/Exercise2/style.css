@@ -1,0 +1,26 @@
+body {
+  background: #eee;
+  margin: 0 auto;
+}
+
+.container {
+  display: flex;
+  background: #fff;
+  max-width: 500px;
+  flex-wrap: wrap;
+  flex-direction: column; 
+  height: 400px;
+}
+
+.item {
+  height: 100px;
+  min-width: 100%;
+}
+
+.one {
+  background: yellow;
+}
+
+.two {
+  background: purple;
+}

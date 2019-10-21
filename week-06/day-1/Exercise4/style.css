@@ -34,6 +34,10 @@ body {
   background: yellow;
   height: 1000px;
   margin: 0% 5% 2% 5%;
-  align-items: center;
-  justify-content: flex-start;
+  align-items: right;
+  justify-content: flex-end;
+}
+.page {
+  background: green;
+  width: 30%;
 }

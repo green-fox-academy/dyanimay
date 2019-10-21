@@ -9,9 +9,10 @@ body {
   height: 300px;
   padding: 0;
   margin: 0;
-  align-items: center;
-  /*justify-content: space-between;*/
-  justify-content: space;
+  /* align-items: center; 3.1 */
+  /*justify-content: space-between; 3.2*/
+  align-items: flex-end; /*3.3*/
+  justify-content: flex-end; /*3.3*/
 }
 
 .item {
@@ -19,5 +20,6 @@ body {
   background: purple;
   height: 100px;
   width: 100px;
-  margin-right: 5px;
+  /* margin-right: 5px; 3.1 */
+  margin-left: 5px; /*3.3*/
 }

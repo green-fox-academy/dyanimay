@@ -7,12 +7,14 @@ body {
   display: flex;
   background: yellow;
   height: 300px;
-  z-index: 0;
+  padding-left: 0;
 }
 
 .item {
+  list-style: none;
   background: purple;
-  height: 100%;
-  min-width: 100%;
-  z-index: 1;
+  height: 100px;
+  width: 100px;
+  justify-content: flex-start;
+  padding-left: 0;
 }

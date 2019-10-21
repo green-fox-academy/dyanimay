@@ -1,0 +1,18 @@
+body {
+  background: #eee;
+  margin: 0 auto;
+}
+
+.container {
+  display: flex;
+  background: #fff;
+  height: 300px;
+  z-index: 0;
+}
+
+.item {
+  background: yellow;
+  height: 100%;
+  min-width: 100%;
+  z-index: 1;
+}

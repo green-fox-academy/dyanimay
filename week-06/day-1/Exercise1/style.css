@@ -14,17 +14,17 @@ body {
   min-width: 100px;
 }
 
-.green {
+.three {
   background: green;
   flex-grow: 1;
 }
 
-.yellow {
+.two {
   background: yellow;
   flex-grow: 2;
 }
 
-.purple {
+.one {
   background: purple;
   flex-grow: 1;
 }

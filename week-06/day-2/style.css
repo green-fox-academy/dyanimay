@@ -1,0 +1,27 @@
+.yellow{
+  background-color: yellow;
+  width: 90%;
+  height: 300px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.purple{
+  width: 75px;
+  height: 75px;
+  background-color: purple;
+}
+
+.purpleshrink{
+  width: 40px;
+  height: 40px;
+  background-color: purple;
+  transition: 2s ease-in-out;
+}
+
+p{
+  color: white;
+  font-size: 20px;
+  align-content: center;
+}

@@ -11,7 +11,7 @@ for (let i = 0; i < conceitedKing.length; i++){
   alert(conceitedKing[i].innerText);
 }
 
-let asteroids = document.querySelectorAll('div.asteroid');
-for (let j = 0; j < asteroids.length; j++){
-  console.log(asteroids[j].innerText);
+let noBusiness = document.querySelectorAll('div.asteroid');
+for (let j = 0; j < noBusiness.length; j++){
+  console.log(noBusiness[j].innerText);
 }

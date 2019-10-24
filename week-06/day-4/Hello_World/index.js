@@ -8,7 +8,11 @@ app.set('view engine', 'ejs');
 // home page
 app.get('/', (req, res) => {
   // render `home.ejs`
-  res.render('home');
+  res.render('home', {
+    title: 'Hello World!',
+    paragraph: '🌍 Hello World application is up and running. 🎉 We are done. Nice work! 🎉',
+    picture: 'pali.png'
+  });
 });
 
 // start express app on port 3000

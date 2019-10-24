@@ -7,13 +7,13 @@ app.set('view engine', 'ejs');
 
 // home page
 app.get('/', (req, res) => {
-  if (Object.entries(req.query).length === 0){
+  if (Object.entries(req.query).length === 0){ //it checks whether you wrote something or not, if not then it writes Guest
     name = 'Guest';
   } else {
     name = req.query.name
   }
   res.render('home', {
-    title: `Welcome back ${name}!`,
+    title: `Welcome back ${name}!`, //I am using the trick here BUT you have to use the back comma `
   });
 });
 

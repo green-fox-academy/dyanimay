@@ -6,16 +6,15 @@
   </head>
   <body>
     <h1>Things to do today:</h1>
-    <!-- <ul>
-      <% for (let i = 0; i < todos.length; i++){ %>
-        <li><%= todos[i] %></li>
-      <% }; %>
-    </ul> -->
     <ul>
-      <% todos.forEach(function(item){ %>
-        <li><%= item %></li>
+      <!-- <% for (let i = 0; i < todos.length; i++){ %>
+        <li>jók a feladat lerások</li>
+      <% }; %> -->
+    </ul>
+    <ul>
+      <% todos.forEach(function(todoListaElemei){ %>
+        <li><%= todoListaElemei %></li>
       <% }); %>
     </ul>
-    <%= todos %>
   </body>
 </html>

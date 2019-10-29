@@ -4,7 +4,7 @@ let timeleft = 10;
 let downloadTimer = setInterval(function() {
   timer.textContent = timeleft;
   if (timeleft <= 0) {
-    timer.textContent = 'Terrorists win';
+    timer.textContent = 'Bomb exploded. Terrorists win';
     clearInterval(downloadTimer);
   }
   timeleft--;
@@ -12,5 +12,18 @@ let downloadTimer = setInterval(function() {
 
 function defuser() {
   clearInterval(downloadTimer);
-  document.getElementById('display').textContent = 'Counter terrorists win';
+  document.getElementById('display').textContent = 'Bomb defused. Counter terrorists win';
 };
+
+function reset() {
+  clearInterval(downloadTimer);
+  timeleft = 10;
+  downloadTimer = setInterval(function() {
+    timer.textContent = timeleft;
+    if (timeleft <= 0) {
+      timer.textContent = 'Bomb exploded. Terrorists win';
+      clearInterval(downloadTimer);
+    }
+    timeleft--;
+  }, 1000);
+}

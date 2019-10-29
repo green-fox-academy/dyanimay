@@ -27,5 +27,18 @@ console.log(mapWith([1, 2, 3], addOne));
 
 const words = ['map', 'reduce', 'filter'];
 
-//console.log(mapWith(words, removeSecondLetter));
+const removeSecondLetter = (word) => {
+  let temp = [];
+
+  let letters = word.split(''); //már a letters is egy array amiben az indexek a szó betűi
+
+  letters.forEach(e => {
+    if( 
+    letters.indexOf(e) % 2 == 0) {
+      temp.push(e); //temp-be rakja be azokat az e-ik betűket amik oszthatók kettővel
+    }
+  })
+  return temp.join(''); //a temp array indexeit (amik a betűk) összejoinolja, így lesznek szavak, pl: mp, a mapWith meg végigmegy a words array elemein/szavain
+}
+console.log(mapWith(words, removeSecondLetter));
 // expected result: ['mp','rdc', 'fle']

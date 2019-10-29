@@ -7,7 +7,7 @@ const mapWith = (array, callback) => {
   // It stores the callback return values in the output.
   // The mapWith() should return with the output array.
   array.forEach(element => {
-    output.push(callback(element))
+    output.push(callback(element)) //végigmegy a beírt array elementjein éss a callback function (addOne) végigcisnálja az egyes elementeken majd visszapusholja az output üres arraybe
   });
   return output;
 }

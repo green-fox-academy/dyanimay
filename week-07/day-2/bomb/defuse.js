@@ -10,8 +10,7 @@ let downloadTimer = setInterval(function() {
   timeleft--;
 }, 1000);
 
-// let btn = document.querySelector('item1');
-
-// btn.addEventListener('click', function(e) {
-//   console.log('the button')
-// })
+function defuser() {
+  clearInterval(downloadTimer);
+  document.getElementById('display').textContent = 'Counter terrorists win';
+};

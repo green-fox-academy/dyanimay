@@ -6,7 +6,9 @@ const mapWith = (array, callback) => {
   // The mapWith() function should iterate over the given array and call the callback function on every element.
   // It stores the callback return values in the output.
   // The mapWith() should return with the output array.
-
+  array.forEach(element => {
+    output.push(callback(element))
+  });
   return output;
 }
 
@@ -25,5 +27,5 @@ console.log(mapWith([1, 2, 3], addOne));
 
 const words = ['map', 'reduce', 'filter'];
 
-console.log(mapWith(words, removeSecondLetter));
+//console.log(mapWith(words, removeSecondLetter));
 // expected result: ['mp','rdc', 'fle']

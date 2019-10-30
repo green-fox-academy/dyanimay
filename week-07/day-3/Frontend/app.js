@@ -52,6 +52,21 @@ app.get('/greeter', (req, res) => {
   res.send(greeter);
 });
 
+app.get('/appenda/:word', (req, res) => {
+  let appenda = {}
+
+  res.status(200);
+  
+  appenda['appended'] = req.params.word + 'a'; //azért params mert :word-öt írtunk, nem sima queryt
+
+  res.send(appenda); //ez mindig kell
+}); 
+
+app.get('/appenda', (req, res) => {
+  res.status(404);
+  res.send();
+})
+
 app.listen(PORT, () => {
   console.log(`The server is up and running on ${PORT}`);
 });

@@ -65,7 +65,27 @@ app.get('/appenda/:word', (req, res) => {
 app.get('/appenda', (req, res) => {
   res.status(404);
   res.send();
-})
+});
+
+const sum = function (number) {
+  let summa = 0;
+  for (let i = 1; i <= number; i++){
+    summa = summa + i;
+  }
+  return summa;
+};
+console.log(sum(5));
+app.post('/dountil/:action', (req, res) => {
+  let dountil = {};
+
+  res.status(200);
+
+  if (req.params.action == sum){
+    dountil['until'] = sum(req.body.until) ;
+  }
+
+  res.send(dountil);
+});
 
 app.listen(PORT, () => {
   console.log(`The server is up and running on ${PORT}`);

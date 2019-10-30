@@ -40,7 +40,7 @@ app.listen(PORT, () => {
 //[GET] /movies
 app.get('/movies', (req, res) => {
   const movies = {
-    list: ['zombieland', 'godzilla', 'sharknado', 'zombeavers'];
+    list: ['zombieland', 'godzilla', 'sharknado', 'zombeavers']
   }
   
   res.status(200);
@@ -52,7 +52,7 @@ app.get('/movies', (req, res) => {
   console.log('query param: ' + req.query.genre);
             
   const movies = {
-    list: ['zombieland', 'zombeavers'];
+    list: ['zombieland', 'zombeavers']
   };
             
   res.status(200);
@@ -89,4 +89,31 @@ app.post('/movies', (req, res) => {
   res.send('ok');
 });
 //[DELETE] /movies/id
+app.delete('/movies/:id', (req, res) => {
+  console.log('The movie is successfully deleted: ' + req.param.id);
 
+  var movies = {
+    title: 'zomieland',
+    genre: 'comedy',
+    release: 2010
+  }
+
+  res.status(200);
+  res.setHeader('Content-type', 'text/plain');
+  res.send('ok');
+});
+
+//[DELETE] /movies/genre
+app.delete('/movies/:id', (req, res) => {
+  console.log('All movies are successfully deleted: ' + req.query.genre);
+
+  var movies = {
+    title: 'zomieland',
+    genre: 'comedy',
+    release: 2010
+  }
+
+  res.status(200);
+  res.setHeader('Content-type', 'text/plain');
+  res.send('ok');
+});

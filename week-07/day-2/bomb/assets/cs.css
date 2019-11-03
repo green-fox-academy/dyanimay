@@ -1,0 +1,36 @@
+body {
+  margin: 0px;
+  width: 1012px;
+  padding: 50px 10%;
+}
+
+.game {
+  width: 1012px;
+  /* height: 569px; */
+}
+
+.title {
+  width: 1012px;
+  height: 30px;
+  text-align: center;
+}
+
+#display {
+  padding: 5px 0px;
+  font-weight: bold;
+}
+
+.interface {
+  height: 40px;
+  width: 200px;
+  background-color: grey;
+  position: absolute;
+  padding: 10px;
+}
+
+.choices {
+  display: inline-block;
+  justify-content: space-around;
+  display: flex;
+  height: 40px;
+}

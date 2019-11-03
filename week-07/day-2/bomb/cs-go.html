@@ -4,13 +4,27 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>CS 1.6 - Map: Dust 2</title>
+  <link rel="Stylesheet" type="text/css" href="./assets/cs.css" />
+  <title>CS: GO Web App 2019</title>
 </head>
 <body>
-  <div 
-  <div id="display">10</div>
-  <button onclick="defuser()">Defuse</button>
-  <button onclick="reset()">New Game</button>
+  <div class="game">
+    <div class="title">
+      <div id="display">10</div>
+    </div>
+    <div class="map">
+      <img src="assets/2012-09-11_00005.jpg">
+    </div>
+    <div class="interface">
+        <div class="choices">
+        <button onclick="defuser()">Defuse</button>
+        <button onclick="reset()">New Game</button>
+        </div>  
+      <!-- <div class="bomb">
+        <img src="./assets/imgbin-counter-strike-global-offensive-video-games-c-4-c4-Xg96mvJqxM3zN2pcTAjd7Sddr.jpg">
+      </div> -->
+    </div>
+  </div>
 </body>
     <!-- // Create a timeout that will set the display to "Bomb exploded" in 10 seconds
     // If you click on the button set the display to "Bomb defused" and stop the timeout

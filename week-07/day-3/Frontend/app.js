@@ -1,10 +1,14 @@
 const express = require('express');
 const path = require('path');
+var bodyParser = require('body-parser'); //bodyparser POST miatt kell 71. sor
 
 const app = express();
 const PORT = 8080;
 
 app.use(express.static('assets'));
+app.use(bodyParser.urlencoded({ extended: false }));
+
+var jsonParser = bodyParser.json()
 
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'index.html'));

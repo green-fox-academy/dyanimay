@@ -19,7 +19,7 @@ function defuser() {
 function giveUp() {
   clearInterval(downloadTimer);
   document.getElementById("display").textContent =
-    "WHY DID U GIVE UP??! Terrorists win";
+    "You have been disconnected. Reconnecting...";
 }
 
 function reset() {

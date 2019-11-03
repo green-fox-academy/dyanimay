@@ -67,24 +67,62 @@ app.get('/appenda', (req, res) => {
   res.send();
 });
 
-const sum = function (number) {
-  let summa = 0;
-  for (let i = 1; i <= number; i++){
-    summa = summa + i;
+app.post('/dountil/:action', jsonParser, (req, res) => {
+  let response = req.body; 
+  let number = response.until //what is this?
+  let output = {};
+  let result;
+
+  if (req.params.action == 'sum') {
+    result = 0;
+    for (let i = 0; i <= number; i++) {
+      result += i
+    }
+    output["result"] = result
+  } else if (req.params.action == 'factor') {
+    result = 1;
+    for (let i = 1; i <= number; i++) {
+      result *= i
+    }
+    output["result"] = result
+  } else {
+    output["error"] = "Please provide a number!"
   }
-  return summa;
-};
-console.log(sum(5));
-app.post('/dountil/:action', (req, res) => {
-  let dountil = {};
+  res.send(output);
+});
 
-  res.status(200);
-
-  if (req.params.action == sum){
-    dountil['until'] = sum(req.body.until) ;
+app.post('/arrays', jsonParser, (req, res) => {
+  let response = req.body;
+  let numbers = response.numbers
+  let what = response.what
+  let output = {};
+  let result;
+  if (numbers != undefined) {
+    if (what == 'sum') {
+      result = 0
+      for (let i = 0; i < numbers.length; i++) {
+        result += numbers[i];
+      }
+      output["result"] = result;
+    } else if (what == 'multiply') {
+      result = 1
+      for (let i = 0; i < numbers.length; i++) {
+        result *= numbers[i];
+      }
+      output["result"] = result;
+    } else if (what == 'double') {
+      result = []
+      for (let i = 0; i < numbers.length; i++) {
+        result.push(numbers[i] * 2);
+      }
+      output["result"] = result;
+    } else {
+      output["error"] = "Please provide what to do with the numbers!"
+    }
+  } else {
+    output["error"] = "Please provide what to do with the numbers!"
   }
-
-  res.send(dountil);
+  res.send(output);
 });
 
 app.listen(PORT, () => {

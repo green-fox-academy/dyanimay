@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 let timer = document.getElementById('display');
 let timeleft = 10;
 let downloadTimer = setInterval(function() {
@@ -13,6 +13,11 @@ let downloadTimer = setInterval(function() {
 function defuser() {
   clearInterval(downloadTimer);
   document.getElementById('display').textContent = 'Bomb defused. Counter terrorists win';
+};
+
+function giveUp() {
+  clearInterval(downloadTimer);
+  document.getElementById('display').textContent = 'WHY DID U GIVE UP??! Terrorists win';
 };
 
 function reset() {

@@ -6,31 +6,48 @@ body {
 
 .game {
   width: 1012px;
-  /* height: 569px; */
+  height: 569px;
+  position: relative;
 }
 
 .title {
-  width: 1012px;
-  height: 30px;
+  height: 35px;
   text-align: center;
+  position: absolute;
+  top: 0px;
+  left: 30%;
+  right: 30%;
+  border: 2px solid black;
+  background-color: white;
 }
 
 #display {
-  padding: 5px 0px;
+  padding: 7px 0px;
   font-weight: bold;
 }
 
-.interface {
-  height: 40px;
+.newGame {
+  height: 45px;
   width: 200px;
-  background-color: grey;
   position: absolute;
-  padding: 10px;
-}
-
-.choices {
   display: inline-block;
   justify-content: space-around;
   display: flex;
-  height: 40px;
+  top: 0px;
+  right: 0px;
+}
+.click:hover {
+  cursor: pointer;
+}
+.black {
+  border: 2px solid black;
+  background: white;
+  font-weight: bold;
+}
+
+#defuse {
+  position: absolute;
+  left: 45%;
+  top: 43%;
+  background: none;
 }

@@ -49,9 +49,11 @@ app.get('/posts', function (req, res) {
 //STEP 5 - TASK 3: post a post on the website ADDING
 app.post('/posts', jsonParser, (req, res) => {
   let response = req.body;
-  let sqlQuery = ("INSERT INTO posts VALUES(null,'" + req.body.title + "','" + req.body.url + "','" + Date.now() + "',1,'" + currentUser + "',1);");
-  conn.query(sqlQuery, function (err, rows) {
-    if (err) {
+  //and also save the Post to your database = ezzel hogy változót hoztunk létre az INSERT funkcióra ls ezt használjuk a conn.queryre
+  let sqlQuery = ("INSERT INTO posts VALUES(null,'" + respone.title + "','" + response.url + "','" + Date.now() + "',1,'" + currentUser + "',1);"); //ezt írnád be az sql sorába
+  //make sure that you receive the proper object
+  conn.query(sqlQuery, function (err, rows) { //először beszedünk mindent adatot, az ebben benne lévő conn.queryvel meg csak azt adjuk VISSZA amit mi akarunk, ami az i-t megadták
+    if (err) { //safety
       console.log(err.toString());
       res.status(500).send('Database error');
       res.send();
@@ -61,7 +63,8 @@ app.post('/posts', jsonParser, (req, res) => {
     res.setHeader("Accept", "application/json");
     res.setHeader("Username", "username");        // should be changable username
     res.status(200);
-    conn.query('SELECT * FROM posts WHERE id = ?;', [rows.insertId], function (err, newRow) {
+    //and return the proper object as a response
+    conn.query('SELECT * FROM posts WHERE id = ?;', [rows.insertId], function (err, newRow) { //azt akarom látni amit a user beír, ezért írok kérdőjelet és a [rows.insertID]
       if (err) {
         console.log(err.toString());
         res.status(500).send('Database error');

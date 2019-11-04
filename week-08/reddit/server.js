@@ -1,18 +1,18 @@
-const express = require('express');
+const express = require('express'); //it makes our .js file to be able to do backend
 const mysql = require('mysql');
-const env = require('dotenv').config();
-var bodyParser = require('body-parser')
+const env = require('dotenv').config(); //env is not called anywhere
+var bodyParser = require('body-parser') //to use the body, we need body parser "npm install body-parser --save", mindenképp kapunk vissza body-t (infot {}-ben), de ha használni is akarjuk akkor kell ez
 
-const app = express();
+const app = express(); 
 const PORT = 3000;
 app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: false }))
 var jsonParser = bodyParser.json()
 
-let conn = mysql.createConnection({
+let conn = mysql.createConnection({ //ehhez kell telepíteni npm install mysql which connect the database to the server
   host: 'localhost',
-  user: 'user', //ezt írtam át
-  password: 'password',
+  user: 'root', //rewrote this
+  password: 'T0thba1csecse',
   database: 'rapgods'
 });
 

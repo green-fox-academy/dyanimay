@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Delayed click</title>
+  </head>
+  <body>
+    <button>Click me</button>
+    <h1></h1>
+    <script>
+      const btn = document.querySelector("button");
+      let click = 0;
+      let pageLoad = 0;
+      btn.addEventListener("click", (e) => {
+        console.log((e.timeStamp - pageLoad));
+        click += 1;
+        if (click >= 3 && (e.timeStamp - pageLoad) > 5000) {
+          document.querySelector("h1").textContent = "5 seconds elapsed and clicked 3 times";
+        } else if ((e.timeStamp - pageLoad) < 5000){
+          document.querySelector("h1").textContent = "";
+        }
+      });
+    </script>
+  </body>
+</html>

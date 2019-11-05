@@ -20,7 +20,7 @@
       let headline = document.getElementsByTagName('h1')[0];
 
       body.addEventListener("keyup", function() {
-        headline.textContent = event.code;
+        headline.textContent = 'Last pressed key code is: ' + event.code;
         console.log(event);
       });
 

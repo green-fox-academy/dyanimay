@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Workshop: EventListeners</title>
+    <style>
+      html, body {
+        margin: 0;
+        padding: 0;
+      }
+      nav {
+        text-align: center;
+      }
+      button {
+        margin: 16px;
+      }
+      .img-inspector {
+        margin: 0 auto;
+        width: 500px;
+        height: 320px;
+        border: 1px solid #3a3a3a;
+        background-image: url("../assets/mp.jpg");
+        background-size: 200%;
+        background-position-x: 0px;
+        background-position-y: 0px;
+        background-repeat: no-repeat; 
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <button data-action="move" data-direction="up">Up</button>
+      <button data-action="move" data-direction="down">Down</button>
+      <button data-action="move" data-direction="left">Left</button>
+      <button data-action="move" data-direction="right">Right</button>
+      <button data-action="zoom" data-direction="in">Zoom in</button>
+      <button data-action="zoom" data-direction="out">Zoom out</button>
+    </nav>
+    <div class="img-inspector">
+    </div>
+
+    <!-- You can work in the html or in a separate js file. Like:
+
+    
+      Here is an image inspector, but the buttons are not implemented yet, that will
+      be your task!
+       - the nav buttons (up, down, left, right) move the background by 10px
+       - the zoom buttons increase/decrease the image by 20%
+       - attach only two event listeners to the nav element
+         - one for navigation
+         - one for zooming -->
+    <script>
+      let size = 200;
+      let posX = 0;
+      let posY = 0;
+      let background = document.querySelector('.img-inspector')
+      let btn = document.querySelector('nav');
+      btn.addEventListener('click', function(e){
+        if (e.target.attributes['data-direction'].value == 'up'){
+          posY += -10;
+          background.style.backgroundPositionY = `${posY}px`; //ha scriptbe írok akkor a "background-position-y"-ból backgroundPositionY lesz mert nincsenek kötőjelek"
+        } else if (e.target.attributes['data-direction'].value == 'down'){
+          posY += 10;
+          background.style.backgroundPositionY = `${posY}px`;
+        } else if (e.target.attributes['data-direction'].value == 'left'){
+          posX += -10;
+          background.style.backgroundPositionX = `${posX}px`;
+        } else if (e.target.attributes['data-direction'].value == 'right'){
+          posX += 10;
+          background.style.backgroundPositionX = `${posX}px`;
+        } else if (e.target.attributes['data-direction'].value == 'in'){
+          size += 20;
+          background.style.backgroundSize = `${size}%`;
+        } else if (e.target.attributes['data-direction'].value == 'out'){
+          size += -20;
+          background.style.backgroundSize = `${size}%`;
+        };
+      });
+    </script>
+  </body>
+</html>

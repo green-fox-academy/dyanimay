@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Account Login</title>
     <link rel="Stylesheet" type="text/css" href="style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
   </head>
   <body>
     <div class="container">
@@ -14,11 +15,15 @@
       <input autofocus type="text" name="uname" />
 
       <label for="psw">Password</label>
-      <input type="password" name="psw" />
+      <div>
+        <input type="password" id="password-field" name="psw" />
+        <i id="pass-status" class="fa fa-eye" aria-hidden="true" onClick="viewPassword()"></i>
+      </div>
       <div class="link">
-        <a href src="https://www.howtogeek.com/304996/how-to-recover-your-forgotten-gmail-password/" target="_blank">Forgot password?</a><br />
+        <a href="https://www.howtogeek.com/304996/how-to-recover-your-forgotten-gmail-password/" target="_blank">Forgot password?</a><br />
       </div>
       <input type="submit" class="button" value="Login"/>
     </div>
+    <script type="text/javascript" src="main.js"></script>
   </body>
 </html>

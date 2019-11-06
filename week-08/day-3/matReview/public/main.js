@@ -1,9 +1,11 @@
-'use strick'
+'use strict';
 
-let name = document.get('name');
+let name = document.getElementById("name");
 
-name.addEventListener('input', function(e){
-  if (name.validity.typeMismatch){
-    
+name.addEventListener("input", function (event) {
+  if (name.validity.typeMismatch) {
+    name.setCustomValidity("Looser Uuuser");
+  } else {
+    name.setCustomValidity("");
   }
-})
+});

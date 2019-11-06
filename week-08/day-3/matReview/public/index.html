@@ -1,18 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
-</head>
-<body>
-  <form action="/send" method="POST">
-    <label for="name">username</label>
-    <input type="text" id="name" name="username" placeholder="John Dough" required pattern="ferike/pistike">
-    <input type="email" id="email" name="email" placeholder="email@email.com">
-    <button type="submit">Click me!</button>
-  </form>
-  <script src="./main.js"></script>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form action="/send" method="POST">
+      <label for="name">username</label>
+      <input
+        type="text"
+        id="name"
+        name="pistike"
+        placeholder="John Doe / Jane Doe"
+        required
+        pattern="ferike|pistike"
+      />/>
+      <label for="email">username</label>
+      <input
+        type="email"
+        id="email"
+        name="email"
+        placeholder="pistike@pistike.hu"
+      />
+      <button type="submit">Click Me!</button>
+    </form>
+    <script src="./main.js"></script>
+  </body>
 </html>

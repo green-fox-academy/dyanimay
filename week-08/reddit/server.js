@@ -12,10 +12,10 @@ app.use(bodyParser.urlencoded({ extended: false }))
 var jsonParser = bodyParser.json()
 //STEP 2 - Connecting the server and the sql database
 let conn = mysql.createConnection({ //ehhez kell telepíteni npm install mysql which connect the database to the server
-  host: 'localhost',
-  user: 'root', //rewrote this
-  password: 'T0thba1csecse',
-  database: 'rapgods'
+  host: DB_HOST,
+  user: DB_USER,
+  password: DB_PASS,
+  database: DB_NAME
 });
 //STEP 2 - Connecting the server and the sql database - does nothing else
 conn.connect((err) => {
@@ -29,7 +29,7 @@ let currentUser = 'testUser' //this is needed because we added the optional user
 app.get('/hello', function (req, res) {
   res.send('Hello World!') //it overrides the whole webpage when i open localhost:3000/hello
 })
-//STEP 4 - TASK 2: post get endpoint WIRING IN
+//STEP 4 - TASK 2: post get endpoint - WIRING IN
 app.get('/posts', function (req, res) {
   conn.query('SELECT * FROM posts;', function (err, rows) { //query = az amit beírnék a mysql sorba a konzolban
     if (err) { //database mistakes go here
@@ -46,7 +46,7 @@ app.get('/posts', function (req, res) {
     res.send(output); //ettől fog megjelenni, ettől lesz "visszaküldve" = response
   });
 });
-//STEP 5 - TASK 3: post a post on the website ADDING
+//STEP 5 - TASK 3: post a post on the website - ADDING
 app.post('/posts', jsonParser, (req, res) => {
   let response = req.body;
   //and also save the Post to your database = ezzel hogy változót hoztunk létre az INSERT funkcióra ls ezt használjuk a conn.queryre

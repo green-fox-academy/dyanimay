@@ -49,8 +49,8 @@ app.get('/posts', function (req, res) {
 //STEP 5 - TASK 3: post a post on the website - ADDING
 app.post('/posts', jsonParser, (req, res) => {
   let response = req.body;
-  //and also save the Post to your database = ezzel hogy változót hoztunk létre az INSERT funkcióra ls ezt használjuk a conn.queryre
-  let sqlQuery = ("INSERT INTO posts VALUES(null,'" + respone.title + "','" + response.url + "','" + Date.now() + "',1,'" + currentUser + "',1);"); //ezt írnád be az sql sorába
+  //and also save the Post to your database = ezzel hogy változót hoztunk létre az INSERT funkcióra így ezt használjuk a conn.queryre
+  let sqlQuery = ("INSERT INTO posts VALUES(null," + respone.title + "," + response.url + "," + Date.now() + ",1," + currentUser + ",1);"); //ezt írnád be az sql sorába
   //make sure that you receive the proper object
   conn.query(sqlQuery, function (err, rows) { //először beszedünk mindent adatot, az ebben benne lévő conn.queryvel meg csak azt adjuk VISSZA amit mi akarunk, ami az i-t megadták
     if (err) { //safety
@@ -113,10 +113,8 @@ app.put('/posts/:id/upvote', (req, res) => {
       output = { "posts": newRow }
       res.send(output);
     });
-
   });
-
-})
+});
 
 app.put('/posts/:id/downvote', (req, res) => {
   let sqlQuery = ("UPDATE posts SET score = score - 1 WHERE id = "+ req.params.id+";");

@@ -85,6 +85,7 @@ app.put("/posts/:id/downvote", function(req, res) {
   });
 });
 
+//úgy kéne megcisnálni hogy egy "deleted" boolean van a táblázat egyik oszlopában és amikor a törlés történik akkor oda 1 avgy true kerül, és később amikor lekérem a felhazsnálókat akkor csak azokat SELECTelem ki WHERE deleted = false
 app.delete("/posts/:id", (req, res) => {
   conn.query("SELECT * FROM posts WHERE id = " + req.params.id + ";", function(err,rows) {
     if (err) {

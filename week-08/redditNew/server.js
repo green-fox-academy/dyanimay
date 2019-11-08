@@ -22,7 +22,7 @@ conn.connect(function(err) {
         console.log(err);
         return;
     }
-    console.log('Connection to database established');
+    console.log('Connection to database has been established');
 });
 
 //first task
@@ -32,7 +32,7 @@ app.get('/hello', function(req, res) {
 
 // APP.GET 
 app.get('/posts', (req, res) => {
-    conn.query('SELECT * FROM reddit.posts', (err, result) => {
+    conn.query('SELECT * FROM redditNew.posts', (err, result) => {
         res.setHeader("Content-type", "application/json");
         res.send(JSON.stringify(result)); //REST API
         //console.log('Client request: "GET posts".') //just ellenőrzés
@@ -41,9 +41,9 @@ app.get('/posts', (req, res) => {
 
 // ADD NEW POST
 app.post('/posts', function(req, res) {
-    const queryString = `INSERT INTO reddit.posts (title, url, score) VALUES ('${req.body.title}', '${req.body.url}', '0')`
+    const queryString = `INSERT INTO redditNew.posts (title, url, score) VALUES ('${req.body.title}', '${req.body.url}', '0')`
     conn.query(queryString, (err, result) => {
-        const query = `SELECT * FROM reddit.posts WHERE id=${result.insertId}`
+        const query = `SELECT * FROM redditNew.posts WHERE id=${result.insertId}`
         conn.query(query, (err, post) => {
             res.setHeader("Content-type", "application/json");
             res.status(200);
@@ -55,9 +55,9 @@ app.post('/posts', function(req, res) {
 //UPVOTE
 
 app.put('/posts/:id/upvote', function(req, res) {
-    const queryString = `UPDATE reddit.posts SET score = score + 1 WHERE id = ${req.params.id}`;
+    const queryString = `UPDATE redditNew.posts SET score = score + 1 WHERE id = ${req.params.id}`;
     conn.query(queryString, () => {
-        const query = `SELECT * FROM reddit.posts WHERE id=${req.params.id}`
+        const query = `SELECT * FROM redditNew.posts WHERE id=${req.params.id}`
         conn.query(query, (err, post) => {
             res.setHeader("Content-type", "application/json");
             res.status(200);
@@ -68,11 +68,11 @@ app.put('/posts/:id/upvote', function(req, res) {
 
 //DOWNVOTE
 app.put('/posts/:id/downvote', function(req, res) {
-    //const score = `SELECT score FROM reddit.posts WHERE id=${req.params.id}`;
+    //const score = `SELECT score FROM redditNew.posts WHERE id=${req.params.id}`;
     //conn.query(score, (err, scoreresult) => {
-    const queryString = `UPDATE reddit.posts SET score = score - 1 WHERE id = ${req.params.id}`;
+    const queryString = `UPDATE redditNew.posts SET score = score - 1 WHERE id = ${req.params.id}`;
     conn.query(queryString, () => {
-        const query = `SELECT * FROM reddit.posts WHERE id=${req.params.id}`
+        const query = `SELECT * FROM redditNew.posts WHERE id=${req.params.id}`
         conn.query(query, (err, post) => {
             res.setHeader("Content-type", "application/json");
             res.status(200);
@@ -83,5 +83,5 @@ app.put('/posts/:id/downvote', function(req, res) {
 
 
 app.listen(PORT, () => {
-    console.log(`The server is up and running on ${PORT}`);
+    console.log(`The server is listening on ${PORT}`);
 });

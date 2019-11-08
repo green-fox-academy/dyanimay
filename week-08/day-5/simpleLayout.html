@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>CSS Grid</title>
+  <style>
+    * {
+      margin: 0;
+    }
+
+    header {
+      background-color: purple;
+      height: 100px;
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      padding: 30px 10%;
+      box-sizing: border-box;
+      grid-gap: 15px;
+    }
+    .button {
+      height: 40px;
+      background-color: turquoise;
+    }
+    .grid-container {
+      padding: 15px 10%;
+      display: grid;
+      grid-auto-rows: minmax(100%, auto);
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(9, minmax);
+      grid-gap: 10px;
+    }
+    main {
+      background-color: yellow;
+      grid-column: 2 / 4;
+      grid-row: 1 / 8;
+    }
+    aside {
+      background-color: green;
+      grid-column: 1 / 2;
+      grid-row: 1 / 8;
+    }
+    footer {
+      background-color: grey;
+      grid-column: 1 / 4;
+      grid-row: 8 / 9;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav class="button"></nav>
+    <nav class="button"></nav>
+    <nav class="button"></nav>
+    <nav class="button"></nav>
+  </header>
+  <div class="grid-container">
+    <main></main>
+    <aside></aside>
+    <footer></footer>
+  </div>
+</body>
+</html>

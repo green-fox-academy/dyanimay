@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Exercise 1</title>
+    <style>
+      body {
+        margin: 0px;
+      }
+      .grid-container {
+        background-color: purple;
+        display: grid;
+        grid-template-columns: 1fr 3fr 1fr;
+        grid-template-areas: "side main side";
+        grid-auto-rows: minmax(200px, auto);
+        grid-gap: 10px;
+        border: 10px solid purple;
+      }
+      .side {
+        background-color: yellow;
+      }
+      .main {
+        background-color: green;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="grid-container">
+      <div class="side">Left</div>
+      <div class="main">60 is my ratio</div>
+      <div class="side">Right</div>
+    </div>
+  </body>
+</html>

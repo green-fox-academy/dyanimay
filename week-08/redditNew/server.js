@@ -1,8 +1,8 @@
-"use strict";
+'use strict';
 
 const mysql = require("mysql");
 const express = require("express");
-const path = require("path");
+//const path = require("path"); ez egy külön npm package ahhoz hogy ezt a server.js-t megtalálja ezt a pathot, de macen nem kell. Emiatttudom azt csinálni hogy "./assets/html"
 const PORT = 8080;
 const env = require("dotenv").config();
 let bodyParser = require("body-parser"); //to use the body, we need body parser "npm install body-parser --save", mindenképp kapunk vissza body-t (infot {}-ben), de ha használni is akarjuk akkor kell ez

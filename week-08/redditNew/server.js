@@ -1,3 +1,5 @@
+'use strict'
+
 const mysql = require('mysql')
 const express = require('express');
 const path = require('path');
@@ -25,7 +27,7 @@ app.use(express.json());
 
 //first task
 app.get('/hello', function(req, res) {
-    res.send("hello :)");
+    res.send('Hello World!');
 })
 
 // APP.GET 

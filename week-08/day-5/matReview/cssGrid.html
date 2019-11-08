@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>CSS Grid</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    .grid-container {
+      display: grid;
+      background-color: beige;
+      grid-auto-rows: minmax(200px, auto);
+      grid-gap: 10px;
+
+      grid-template-areas:
+        "nav nav nav"
+        "main main aside"
+    }
+    nav {
+      background-color: orange;
+      grid-area: nav;
+    }
+    main {
+      background-color: black;
+      grid-area: main;
+    }
+    aside {
+      background-color: purple;
+      grid-area: aside;
+    }
+  </style>
+</head>
+<body>
+  <div class="grid-container">
+    <nav>Content | About Us | Contact</nav>
+    <main>
+      Some content is here
+    </main>
+    <aside>
+      There will be bookmarks
+    </aside>
+  </div>
+</body>
+</html>

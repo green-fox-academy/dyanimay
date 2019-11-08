@@ -12,10 +12,10 @@ app.use(bodyParser.urlencoded({ extended: false }))
 var jsonParser = bodyParser.json()
 //STEP 2 - Connecting the server and the sql database
 let conn = mysql.createConnection({ //ehhez kell telepíteni npm install mysql which connect the database to the server
-  host: DB_HOST,
-  user: DB_USER,
-  password: DB_PASS,
-  database: DB_NAME
+  host: process.env.DB_HOST,
+  user: process.env.DB_USER,
+  password: process.env.DB_PASS,
+  database: process.env.DB_NAME
 });
 //STEP 2 - Connecting the server and the sql database - does nothing else
 conn.connect((err) => {

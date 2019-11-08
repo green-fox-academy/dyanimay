@@ -15,14 +15,15 @@
         grid-template-columns: 1fr 3fr 1fr;
         grid-template-areas: "side main side";
         grid-auto-rows: minmax(200px, auto);
-        grid-gap: 10px;
-        border: 10px solid purple;
       }
       .side {
         background-color: yellow;
       }
       .main {
         background-color: green;
+      }
+      .grid-container, .main, .side {
+        border: 5px solid purple;
       }
     </style>
   </head>

@@ -12,3 +12,11 @@ test('value is in the list', function(t) {
   t.equal(actual, expected, 'value is in the list');
   t.end();
 });
+
+test('value is in the list', function(e) {
+  let actual = index([0,1,2,3,4], 5);
+  let expected = -1;
+
+  e.equal(actual, expected);
+  e.end();
+});

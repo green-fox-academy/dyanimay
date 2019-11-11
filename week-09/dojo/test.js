@@ -2,10 +2,10 @@
 
 let test = require('tape');
 let index = require('./index');
+let anagram = require('./anagram');
 
-console.log(index);
-
-test('value is in the list', function(t) {
+//TASK INDEX
+test('1.test: value is in the list', function(t) {
   let actual = index([0,1,2,3,4], 2);
   let expected = 2;
 
@@ -13,10 +13,19 @@ test('value is in the list', function(t) {
   t.end();
 });
 
-test('value is in the list', function(e) {
+test('2. test: value is in the list', function(e) {
   let actual = index([0,1,2,3,4], 5);
   let expected = -1;
 
-  e.equal(actual, expected);
+  e.equal(actual, expected, 'value is not in the list');
   e.end();
+});
+
+//TASK ANAGRAM
+test('3. test: strings are the same', t => {
+  let actual = JSON.stringify(anagram('desserts', 'stressed'));
+  let exptected = JSON.stringify(true);
+
+  t.equal(actual, exptected, '2 strins are the same');
+  t.end();
 });

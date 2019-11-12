@@ -3,7 +3,7 @@
 const test = require('tape');
 const request = require('supertest');
 const app = require('../routes');
-
+//1st test
 test('groot endpoint with message', t => {
   request(app)
     .get('/groot') //it makes a request to these end points
@@ -20,7 +20,7 @@ test('groot endpoint with message', t => {
       t.end();
     });
 });
-
+//2nd test A version
 test('groot endpoint without message', t => {
   request(app)
     .get('/groot')
@@ -33,7 +33,7 @@ test('groot endpoint without message', t => {
       t.end();
     });
 });
-
+//2nd test B version
 test('groot endpoint without message', t => {
   request(app)
     .get('/groot')

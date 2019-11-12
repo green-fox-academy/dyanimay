@@ -3,6 +3,7 @@
 let test = require('tape');
 let index = require('./index');
 let anagram = require('./anagram');
+let numberConverter = require('./numberConverter');
 
 //TASK INDEX
 test('1.test: value is in the list', function(t) {
@@ -35,5 +36,14 @@ test('2b. test: strings are the same', t => {
   let exptected = JSON.stringify(true);
 
   t.equal(actual, exptected, '2 strins are the same');
+  t.end();
+});
+
+//TASK NUMBER CONVERTER 
+test('1a. test: number is converted', t => {
+  let actual = numberConverter(745);
+  let expected = 'seven hundred and fourty five'
+
+  t.equal(actual, expected, 'the number is successfully converted');
   t.end();
 });

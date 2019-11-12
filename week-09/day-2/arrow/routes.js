@@ -7,18 +7,25 @@ app.use(bodyParser.urlencoded({
 }));
 app.use(bodyParser.json());
 
-app.get('/groot', (req, res) => {
-  let message = req.query.message; //ez a localhost:3000/groot?message= bármi amit  ide beírsz, ez lesz a query message
+app.get('/yondu', (req, res) => {
+  let distance = req.query.distance; //ez a localhost:3000/yondu?distance= bármi amit  ide beírsz, ez lesz a query distance
+  let time = req.query.time;
 
-  if(message){
+  if(distance && time){
+    if (time > 0){
     res.status(200);
     res.json({
-      "received": message,
-      "translated": "I am Groot!"
+      "distance": distance,
+      "time": time,
+      "speed": distance/time
     });
+    } else {
+    res.status(404);  
+    res.json({"error": "This is matematically incorrect you moron"})
+    }
   } else {
     res.status(404);
-    res.json({"error": "I am Groot!"});
+    res.json({"error": "Please add time and distance"});
   }
 });
 

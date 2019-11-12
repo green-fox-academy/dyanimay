@@ -45,7 +45,7 @@ let pokemonDatabase = [
     }
 ]
 
-app.get('/api/pokemon', function (req, res) {
+app.get('/api/pokemon', function (req, res) { //localhost:3000/api/pokemon?type=fire így keresünk fire pokemont postmannal
     let type = req.query.type;
     let filteredPokemons = pokemonDatabase;
 

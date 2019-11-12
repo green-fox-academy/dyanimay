@@ -15,8 +15,8 @@ app.get('/yondu', (req, res) => {
     if (time > 0){
     res.status(200);
     res.json({
-      "distance": distance,
-      "time": time,
+      "distance": parseFloat(distance), //átalakítja a stringet számra (integerre) 1 tizedes jeggyel
+      "time": parseFloat(time),
       "speed": distance/time
     });
     } else {

@@ -19,8 +19,11 @@
   }
   button {
     border-radius: 10px;
-    box-shadow: 0px 5px;
+    border: none;
+    box-shadow: inset 0px -4px 0px 0px rgba(0,0,0,0.3), inset 0px 2px 0px 0px rgba(277, 277, 277, 0.2);
     font-size: 20px;
+    border-collapse: collapse;
+    color: black;
   }
   button:hover {
     filter: brightness(110%);
@@ -28,6 +31,7 @@
   }
   .button:active {
     filter: brightness(90%);
+    background-color: inherit;
   }
   .left {
     background-color:dodgerblue;

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Rounded Buttons</title>
+  <style>
+  body {
+    background-color: darkslateblue;
+  }
+  .navigation {
+    display: grid;
+    margin: 10% auto;
+    width: 600px;
+    height: 50px;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 30px;
+  }
+  button {
+    border-radius: 10px;
+    box-shadow: 0px 5px;
+    font-size: 20px;
+  }
+  button:hover {
+    filter: brightness(110%);
+    cursor: pointer;
+  }
+  .button:active {
+    filter: brightness(90%);
+  }
+  .left {
+    background-color:dodgerblue;
+  }
+  .middle {
+    background-color:firebrick;
+  }
+  .right {
+    background-color: green;
+  }
+  </style>
+</head>
+<body>
+  <div class="navigation">
+    <button class="left">Blue</button>
+    <button class="middle">Red</button>
+    <button class="right">Green</button>
+  </div>
+</body>
+</html>

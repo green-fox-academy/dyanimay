@@ -1,6 +1,7 @@
+const env = require('dotenv').config(); // this loads the defined variables from .env
 const config = {
   app: {
-    port: 8080
+    port: parseInt(process.env.PORT)
   },
   // db: {
   //   host: process.env.DB_HOST,
@@ -10,6 +11,5 @@ const config = {
   // }
  };
 
- require('dotenv').config(); // this loads the defined variables from .env
  
  module.exports = config;

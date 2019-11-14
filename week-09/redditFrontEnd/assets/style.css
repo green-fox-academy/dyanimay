@@ -1,6 +1,7 @@
-body {
-  margin: 0;
-  background-color: white;
+html, body {
+  margin: 0px;
+  background-color: darkslategray;
+  font-family: 'Lato', sans-serif;
 }
 header {
   height: 300px;
@@ -8,20 +9,46 @@ header {
   color: white;
   margin: 0px;
   background: url(../assets/bannerBackgroundImage_zdpd5qpvi3f01.jpg);
+  text-align: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  font-size: 150%;
+  text-transform: uppercase;
+}
+h1 {
+  font-weight: 100;
+  letter-spacing: 2em;
+  margin: 40px auto;
+  padding-left: 2em;
 }
 
-grid-container {
+.grid-container {
+  margin: 20px 10px;
   display: grid;
   max-width: 100%;
-  grid-auto-rows: minmax(100%, auto);
   grid-template-columns: repeat(5, 1fr);
+  height: 100%;
   grid-gap: 10px;
 }
 
 main {
   grid-column: 1/4;
+  background-color: white;
 }
 
 aside {
   grid-column: 4/6;
+  background-color: red;
+}
+button {
+  width: 100%;
+  height: 50px;
+  color: white;
+  background-color: blue;
+  outline: none;
+  border: none;
+  font-size: 30px;
+  text-transform: uppercase;
+  letter-spacing: 4px;
 }

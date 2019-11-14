@@ -23,23 +23,24 @@ h1 {
   padding-left: 2em;
 }
 
-.grid-container {
+.container {
   margin: 20px 10px;
-  display: grid;
+  display: flex;
   max-width: 100%;
-  grid-template-columns: repeat(5, 1fr);
+  flex-direction: row;
   height: 100%;
-  grid-gap: 10px;
 }
 
 main {
-  grid-column: 1/4;
+  width: 60%;
   background-color: white;
 }
 
 aside {
-  grid-column: 4/6;
-  background-color: red;
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  margin-left: 10px;
 }
 button {
   width: 100%;
@@ -51,4 +52,9 @@ button {
   font-size: 30px;
   text-transform: uppercase;
   letter-spacing: 4px;
+  margin-bottom: 10px;
+}
+.title {
+  height: 50px;
+  background-color: red;
 }

@@ -59,4 +59,31 @@ app.put("/posts/:id/downvote", function(req, res) {
   });
 });
 
+//úgy kéne megcisnálni hogy egy "deleted" boolean van a táblázat egyik oszlopában és amikor a törlés történik akkor oda 1 avgy true kerül, és később amikor lekérem a felhazsnálókat akkor csak azokat SELECTelem ki WHERE deleted = false
+app.delete("/posts/:id", (req, res) => {
+  conn.query("SELECT * FROM posts WHERE id = " + req.params.id + ";", function(err,rows) {
+    if (err) {
+      console.log(err.toString());
+      res.status(500).send("Database error");
+      res.send();
+      return;
+    }
+    output = rows;
+    res.setHeader("Content-type", "application/json");
+    res.setHeader("Accept", "application/json");
+    res.setHeader("Username", "username"); // should be changable username
+    res.status(200);
+    res.send(output); //this line send back which post was deleted, in JSON format
+  });
+  let sqlQuery = "DELETE FROM posts WHERE id = " + req.params.id + " ;";
+  conn.query(sqlQuery, function(err, rows) {
+    if (err) {
+      console.log(err.toString());
+      res.status(500).send("Database error");
+      res.send();
+      return;
+    }
+  });
+});
+
 module.exports = app; //kiexportálom a routes.js fájlban lévő cuccokat ezzel

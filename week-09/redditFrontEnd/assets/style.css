@@ -1,0 +1,27 @@
+body {
+  margin: 0;
+  background-color: white;
+}
+header {
+  height: 300px;
+  width: 100%;
+  color: white;
+  margin: 0px;
+  background: url(../assets/bannerBackgroundImage_zdpd5qpvi3f01.jpg);
+}
+
+grid-container {
+  display: grid;
+  max-width: 100%;
+  grid-auto-rows: minmax(100%, auto);
+  grid-template-columns: repeat(5, 1fr);
+  grid-gap: 10px;
+}
+
+main {
+  grid-column: 1/4;
+}
+
+aside {
+  grid-column: 4/6;
+}

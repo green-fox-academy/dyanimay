@@ -1,6 +1,8 @@
+html, body, input, textarea {
+  background-color: #eeeeee;
+}
 html, body {
   margin: 0px;
-  background-color: #eeeeee;
   font-family: 'Lato', sans-serif;
 }
 header {
@@ -23,6 +25,14 @@ h1 {
   padding-left: 2em;
 }
 
+label, input, textarea {
+  width: 99%;
+  max-width: 99%;
+  height: 50px;
+  font-size: 25px;
+  margin: 5px 0px;
+}
+
 .container {
   margin: 20px 10px;
   display: flex;
@@ -34,6 +44,9 @@ h1 {
 main {
   width: 60%;
   background-color: white;
+}
+main > div {
+  margin: 10px;
 }
 
 aside {
@@ -63,4 +76,8 @@ button {
 .aboutSpace {
   background-color: #fbfbfb;
   height: 50px;
+}
+.submitButton {
+  width: 30%;
+  margin: 0px 10px;
 }

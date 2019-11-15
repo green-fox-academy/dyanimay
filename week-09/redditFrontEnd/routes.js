@@ -5,10 +5,15 @@ const conn = require('./db'); //behívom a database fájlt és adatokat
 let bodyParser = require("body-parser"); //to use the body, we need body parser "npm install body-parser --save", mindenképp kapunk vissza body-t (infot {}-ben), de ha használni is akarjuk akkor kell ez
 
 const app = express(); //ettől fut a szerver
-app.use(express.static('assets')); //ez fogja megtalálni a statikus fájlokat(képek és css)
+app.use('/assets', express.static('assets')); //ez fogja megtalálni a statikus fájlokat(képek és css)
 app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 let jsonParser = bodyParser.json();
+
+//LANDING - opening page
+app.get('/', (req, res) => {
+  res.sendFile(__dirname + '/views/main.html');
+});
 
 // APP.GET
 app.get("/posts", (req, res) => {

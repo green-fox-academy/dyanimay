@@ -100,3 +100,29 @@ p, li {
   width: 30%;
   margin: 0px 10px;
 }
+.post {
+  border: 1px solid black;
+  width: 100%;
+  height: 100px;
+  display: flex;
+}
+.vote {
+  height: 100px;
+  width: 15%;
+  border: 1px solid black;
+  display: grid;
+  align-content: center;
+  justify-content: center;
+}
+.item {
+  margin: 5px;
+}
+.arrow {
+  height: 20px;
+  width: 20px;
+}
+.reddit {
+  height: 100px;
+  width: 85%;
+  border: 1px solid red;
+}

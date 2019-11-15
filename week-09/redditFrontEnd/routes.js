@@ -17,6 +17,8 @@ app.get('/', (req, res) => {
 
 // APP.GET
 app.get("/posts", (req, res) => {
+  req.accepts('application/json');
+  
   conn.query("SELECT * FROM posts", (err, result) => {
     res.setHeader("Content-type", "application/json");
     res.send(JSON.stringify(result)); //REST API

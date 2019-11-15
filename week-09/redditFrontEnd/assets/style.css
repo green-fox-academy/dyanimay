@@ -76,6 +76,15 @@ button {
 .aboutSpace {
   background-color: #fbfbfb;
   height: 50px;
+  margin: 0px;
+  padding-left: 10px;
+}
+.aboutSpace > h2 {
+  margin: 0px auto;
+  padding-top: 10px;
+}
+p, li {
+  margin: 10px 10px;;
 }
 .submitButton {
   width: 30%;

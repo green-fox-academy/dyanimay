@@ -28,7 +28,8 @@ app.get("/posts", (req, res) => {
 app.post("/posts", jsonParser, function(req, res) {
   const queryString = `INSERT INTO posts (title, url, score) VALUES ('${req.body.title}', '${req.body.url}', '0')`;
   conn.query(queryString, (err, result) => {
-    const query = `SELECT * FROM posts WHERE id=${result.insertId}`;
+    //const query = `SELECT * FROM posts WHERE id=${result.insertId}`;
+    const query = `SELECT * FROM posts ORDER BY id DESC LIMIT 1`;
     conn.query(query, (err, post) => {
       res.setHeader("Content-type", "application/json");
       res.status(200);

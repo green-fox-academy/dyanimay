@@ -5,6 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Giphy</title>
+  <style>
+  img {
+	  width: 100px;
+	  height: 100px;
+	  margin: 20px;
+  }
+  </style>
 </head>
 
 <body>
@@ -16,8 +23,8 @@
 <script>
   let request = new XMLHttpRequest();
   
-  request.open('GET', 'https://https://api.giphy.com/v1/gifs/search?api_key=sj5CXPXYjE3PV3imvFO2r0JReLKN04S6&q= &limit=16&offset=0&rating=PG-13&lang=en.giphy.com/docs/sdk', true);
-  
+  request.open('GET', "http://api.giphy.com/v1/gifs/search?q=ryan+gosling&api_key=1rzC0Cx7aJLeAzJdOMKcGDtmLUlsTpE2&limit=20", true);
+
   let section = document.querySelector('section');
 
   request.onload = function () {

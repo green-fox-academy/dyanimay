@@ -4,22 +4,35 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
+  <title>Giphy</title>
 </head>
 
 <body>
+  <h3>Giphy exercise</h3>
+  <section>
 
+  </section>
 </body>
 <script>
-  window.addEventListener('click', () => {
-    let request = new XMLHttpRequest()
-    request.open('GET', 'https://https://api.giphy.com/v1/gifs/search?api_key=sj5CXPXYjE3PV3imvFO2r0JReLKN04S6&q= &limit=16&offset=0&rating=PG-13&lang=en.giphy.com/docs/sdk', true)
-    request.onload = function () {
-      let response = JSON.parse(request.responseText)
-      console.log(response)
+  let request = new XMLHttpRequest();
+  
+  request.open('GET', 'https://https://api.giphy.com/v1/gifs/search?api_key=sj5CXPXYjE3PV3imvFO2r0JReLKN04S6&q= &limit=16&offset=0&rating=PG-13&lang=en.giphy.com/docs/sdk', true);
+  
+  let section = document.querySelector('section');
+
+  request.onload = function () {
+    let giphyData = JSON.parse(request.responseText);
+    for (let i = 0; i < 16; i++){
+      let newImage = document.createElement('img');
+      newImage.setAttribute('src', giphyData.data[i].images.fixed_height_small_still.url)
+		  newImage.setAttribute('id', i);
+		  newImage.onclick = () => {
+			  newImage.src = giphyData.data[i].images.fixed_height_small.url
+      };
+    
+		  section.appendChild(newImage);
     }
-    request.send()
-  })
+}
 </script>
 
 </html>

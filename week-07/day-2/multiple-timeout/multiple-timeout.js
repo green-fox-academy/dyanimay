@@ -6,13 +6,16 @@
 // melon -> after 3 seconds
 // grapes -> after 5 seconds
 
-setTimeout(() => {
-  console.log('pear'); // prints after one second
-}, 1000);
-console.log('apple'); // prints after one second
-setTimeout(() => {
-  console.log('melon'); // prints after one second
-}, 3000);
-setTimeout(() => {
-  console.log('grapes'); // prints after one second
-}, 5000);
+const printFruits = () => {
+	console.log('apple');
+  setTimeout(() => {
+    console.log('pear');
+  }, 1000);
+  setTimeout(() => {
+    console.log('melon');
+  }, 3000);
+  setTimeout(() => {
+    console.log('grapes');
+  }, 5000);
+};
+printFruits();

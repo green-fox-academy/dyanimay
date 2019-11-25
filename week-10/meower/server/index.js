@@ -33,6 +33,15 @@ app.get('/', (req, res) => {
   //res.sendFile('/index.html');
 });
 
+app.get('/mews', (req, res) => {
+  const queryAll = `SELECT * FROM mewPost ORDER BY id DESC;`;
+  conn.query(queryAll, (err, post) => {
+    res.setHeader('Content-type', 'application/jsn');
+    res.status(200);
+    res.send(JSON.stringify(post));
+  })
+})
+
 function isValidMew(mew) {
   return mew.name && mew.name.toString().trim() !== ''
 && mew.name && mew.name.toString().trim() !== '';
@@ -50,7 +59,7 @@ app.post('/mews', (req, res) => {
         const query = `SELECT * FROM mewPost ORDER BY id DESC LIMIT 1;`;
         conn.query(query, (err, post) => {
           //console.log(post);
-          res.setHeader("Content-type", "application/json");
+          res.setHeader('Content-type', 'application/json');
           res.status(200);
           res.send(JSON.stringify(post));
         });
@@ -60,9 +69,9 @@ app.post('/mews', (req, res) => {
       name: req.body.name.toString(),
       content: req.body.content.toString(),
       created: new Date()
-    };
+    }
 
-    console.log(mew);
+    // console.log(mew);
   } else {
     res.status(422);
     res.json({

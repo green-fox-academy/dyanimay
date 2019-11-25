@@ -1,0 +1,18 @@
+.container {
+  width: 800px;
+  height: 560px;
+  margin: 0 auto;
+  background-color: burlywood;
+  box-shadow: 2px 2px 1px;
+  display: grid;
+  grid-auto-columns: repeat 4fr;
+  grid-auto-rows: repeat 7fr;
+}
+
+footer {
+  width: 100%;
+  height: 80px;
+  border: 1px solid black;
+  margin-top:auto; 
+  display: flex;
+}

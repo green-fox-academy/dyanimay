@@ -80,6 +80,30 @@ app.post('/mews', (req, res) => {
   }
 });
 
+app.delete('/mews/:id', (req, res) => {
+  conn.query('SELECT * FROM mewPost WHERE id = ' + req.params.id + ';', function (err, rows) {
+    if (err) {
+      console.log(err.toString());
+      res.status(500).send('Database error!');
+      res.send();
+      return
+    }
+    output = rows;
+    res.setHeader("Content-type", "application/json");
+    res.status(200);
+    res.send(output);
+  });
+  let sqlDelete = 'DELETE FROM mewPost WHERE id = ' + req.params.id + ';';
+  conn.query(sqlDelete, (err, rows) => {
+    if (err) {
+      console.log(err.toString());
+      res.status(500).send("Database error");
+      res.send();
+      return;
+    }
+  });
+});
+
 app.listen(PORT, () => {
   console.log(`Listening on http://localhost:${PORT}`)
 });

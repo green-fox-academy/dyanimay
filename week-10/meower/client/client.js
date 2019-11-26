@@ -59,12 +59,17 @@ function listAllMews() {
         const contents = document.createElement('p');
         contents.textContent = mew.content;
 
-        const date = document.createElement('small');
-        date.textContent = new Date(mew.created);
+        const btn = document.createElement('button');
+        btn.className = 'delete';
+        btn.textContent = 'delete post';
+
+        // const date = document.createElement('small');
+        // date.textContent = new Date(mew.created);
 
         div.appendChild(header);
         div.appendChild(contents);
-        div.appendChild(date);
+        div.appendChild(btn);
+        //div.appendChild(date);
 
         mewsElement.appendChild(div);
       });

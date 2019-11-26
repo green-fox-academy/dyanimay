@@ -9,7 +9,7 @@ let conn = mysql.createConnection({
   host: 'localhost',
   user: 'root',
   password: 'T0thba1csecse',
-  database: 'MewTwitter'
+  database: 'MewTwitter2'
 });
 conn.connect(function(err) {
   if (err) {

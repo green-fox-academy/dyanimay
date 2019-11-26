@@ -88,10 +88,10 @@ app.delete('/mews/:id', (req, res) => {
       res.send();
       return
     }
-    output = rows;
+    //console.log(rows);
     res.setHeader("Content-type", "application/json");
     res.status(200);
-    res.send(output);
+    res.send(rows);
   });
   let sqlDelete = 'DELETE FROM mewPost WHERE id = ' + req.params.id + ';';
   conn.query(sqlDelete, (err, rows) => {

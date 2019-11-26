@@ -47,3 +47,6 @@ footer {
   display: flex;
   box-shadow:  0px 0px 10px inset;
 }
+.rewind {
+  background-image: image('./img/rewind.svg');
+}

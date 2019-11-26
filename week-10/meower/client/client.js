@@ -5,6 +5,7 @@ console.log('Hello World!')
 const form = document.querySelector('form');
 const loadingElement = document.querySelector('.loading');
 const API_URL = 'http://localhost:8080/mews';
+const btn = document.querySelector('btn');
 
 loadingElement.style.display = 'none';
 
@@ -52,6 +53,7 @@ function listAllMews() {
       console.log(mews);
       mews.forEach(mew => {
         const div = document.createElement('div');
+        div.className = 'post';
         
         const header = document.createElement('h3');
         header.textContent = mew.name;
@@ -75,3 +77,7 @@ function listAllMews() {
       });
     })
 }
+
+btn.addEventListener('click', (event) => {
+  console.log('klikkeltem');
+});

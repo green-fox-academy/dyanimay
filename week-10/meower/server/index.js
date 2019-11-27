@@ -24,13 +24,13 @@ const app = express();
 
 app.use(cors());
 app.use(express.json());
-//app.use(express.static(__dirname + '/../client'));
+app.use(express.static(__dirname + '/../client'));
 
 app.get('/', (req, res) => {
-  res.json({
-    message: 'Meower!'
-  });
-  //res.sendFile('/index.html');
+  // res.json({
+  //   message: 'Meower!'
+  // });
+  res.sendFile('/index.html');
 });
 
 app.get('/mews', (req, res) => {
@@ -102,7 +102,7 @@ app.delete('/mews/:id', (req, res) => {
       return;
     }
   });
-  
+
 });
 
 app.listen(PORT, () => {

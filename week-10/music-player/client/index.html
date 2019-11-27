@@ -20,12 +20,23 @@
         <div class="albumPicture">
           <img src="../assets/img/music-placeholderSS.png">
         </div>
-        <div class="currentlyPlaying"></div>
+        <div class="currentlyPlaying">
+            <ol id="track-list">
+                <li class="list-item">
+                  <audio id="track-01">
+                    <source src="../assets/music/Organoid_-_09_-_Purple_Drift.mp3" type="audio/mp3"></source>
+                  </audio>
+                </li>
+              </ol>
+        </div>
         <div class="tracklist"></div>
       </main>
       <footer>
-        <button type="submit" class="rewind"></button>
-        <audio></audio>
+        <div class="icons">
+          <nav class="control-button" id="rewind" onclick="jumpTrack(-1)"></nav>
+          <nav class="control-button play-pause" id="play" onclick="togglePlayPause()"></nav>
+          <nav class="control-button" id="forward" onclick="jumpTrack(1)"></nav>
+        </div>
       </footer>
     </div>
   </body>

@@ -6,6 +6,7 @@ const form = document.querySelector('form');
 const loadingElement = document.querySelector('.loading');
 const API_URL = 'http://localhost:8080/mews';
 const btn = document.querySelector('btn');
+const deleteButton = document.querySelector('.delete');
 
 loadingElement.style.display = 'none';
 
@@ -44,8 +45,8 @@ form.addEventListener('submit', (event) => {
   })
 });
 
+const mewsElement = document.querySelector('.mews');
 function listAllMews() {
-  const mewsElement = document.querySelector('.mews');
   mewsElement.innerHTML = '';
   fetch(API_URL)
   .then(response => response.json())
@@ -54,6 +55,7 @@ function listAllMews() {
       mews.forEach(mew => {
         const div = document.createElement('div');
         div.className = 'post';
+        div.id = mew.id;
         
         const header = document.createElement('h3');
         header.textContent = mew.name;
@@ -62,11 +64,12 @@ function listAllMews() {
         contents.textContent = mew.content;
 
         const btn = document.createElement('button');
-        btn.className = 'delete';
+        btn.className = 'button-primary';
         btn.textContent = 'delete post';
+        btn.setAttribute('onclick', `deleteMew(${mew.id})`);
 
         // const date = document.createElement('small');
-        // date.textContent = new Date(mew.created);
+        // date.textContent = new Date();
 
         div.appendChild(header);
         div.appendChild(contents);
@@ -78,6 +81,15 @@ function listAllMews() {
     })
 }
 
-btn.addEventListener('click', (event) => {
-  console.log('klikkeltem');
-});
+function deleteMew(mewId) {
+  fetch(`http://localhost:8080/mews/${mewId}`, {
+    method: 'DELETE'
+  })
+  .then(removeMew(mewId)) //.then-nél csak is funckió lehet, vagy then nélkül leírom
+}
+function removeMew(mewId) {
+//console.log(mewId);
+let mewToRemove = document.getElementById(`${mewId}`);
+//console.log(mewToRemove);
+mewsElement.removeChild(mewToRemove);
+}

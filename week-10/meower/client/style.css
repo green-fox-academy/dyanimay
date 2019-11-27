@@ -17,8 +17,14 @@
   border: 1px solid black;
   margin: 10px 0px;
   box-shadow: 3px 3px 5px;
+  border-radius: 15px;
 }
 
 .delete {
+  background-color: aquamarine;
   box-shadow: 0px 0px 5px;
+}
+
+button:active {
+  transform: translateY(4px);
 }

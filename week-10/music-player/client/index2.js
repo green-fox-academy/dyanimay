@@ -120,3 +120,12 @@ const durationConverter = (duration) => {
 
 	return hours > 0 ? `${hours}:${minutes}:${seconds}` : `${minutes}:${seconds}`
 };
+
+media.addEventListener('ended', function(e)
+{
+  media.pause();
+  playPauseButton.setAttribute('id', 'play');
+  trackElapsedTimeDisplay.textContent = durationConverter(currentTrack.currentTime);
+	progressBar.value = Math.floor(currentTrack.currentTime);
+
+}, false);

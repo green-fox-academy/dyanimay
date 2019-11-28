@@ -190,7 +190,6 @@ app.delete('/api/links/:id', function(req, res) {
       if (req.body.secretCode == find[0].secretCode) {
         const queryDelete = `DELETE FROM TestOrientation WHERE id ='${req.params.id}';`;
         conn.query(queryDelete, (err, deleted) => {
-          console.log(deleted);
         })
         res.sendStatus(204);
       } else {
@@ -204,3 +203,44 @@ app.delete('/api/links/:id', function(req, res) {
 });
 ```
 ## 9. Create index.js frontend
+* [ ] Copy the basics into index.js:
+```
+'use strict'
+
+const message = document.querySelector('.message');
+const API_URL = 'http://localhost:8080/api/links';
+const button = document.querySelector('button');
+```
+* API_URL shows where to connect and FROM WHERE get the infos
+* querySelector targets the .message class(empty div where the message will be shown)
+* querySelector targets the button class which is attached to the button on the html
+* [ ] We have to add an eventlistener either to the form (check the Meow in Week-10 folder) or the button. For the test exam I added to the button: (if id write #url, if class write .url)
+```
+button.addEventListener('click', () => {
+  let url = document.querySelector('#url');
+  let alias = document.querySelector('#alias');
+  if (alias.validity.valid && url.validity.valid) {
+  fetch(API_URL, {
+    method: 'POST',
+    headers: {
+      'content-type': 'application/json'
+    },
+    body: JSON.stringify({
+      url: url.value,
+      alias: alias.value
+    }),
+    mode: 'cors'
+  })
+  .then(response => response.json())
+  .then(responseData => message.innerHTML = `Your URL is aliased to <strong>${responseData[0].alias}</strong> and your secret code is <strong>${responseData[0].secretCode}</strong>.`)
+  .then(responseData => url.value = null)
+  .then(responseData => alias.value = null)
+  .catch(error => message.innerHTML = `<font color = "red"> Your alias is already in use!</font>`);
+ } else {
+   message.innerHTML = `<font color = "red"> Please fill the form correctly!</font>`;
+ }
+});
+```
+* if (alias.validity.valid && url.validity.valid) = VALIDÁLJA hogy TYPEnak(html) megfelelő cuccot írtunk be. (e-mailhez e-mail formátumot, url-hez url formátum http:// stb....)
+* ha amit beírunk akkor a .then(responseData) üres JSON-t ad vissza és nem tud vele dolgozni akkor "error" van és így lép át a .catch-be
+* ha nem jó amit beírunk(nem valid) akkor az ELSE lép életbe

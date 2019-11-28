@@ -28,15 +28,15 @@ app.get("/api/links", jsonParser, function(req, res) {
 //POST infos to the endpoint and store them in the table
 
 //secret code generator
-function secretCodeGenerator() {
-  return Math.floor(Math.random() * Math.floor(9999) + 1000)
+function secretCodeGenerator(min, max) {
+  return Math.floor(Math.random() * (max - min +1) + min);
 }
 
 app.post("/api/links", jsonParser, function(req, res) {
   res.setHeader("Content-type", "application/json", 'text/html');
   res.setHeader('Access-Control-Allow-Origin', '*');
   const querySelect = `SELECT alias FROM TestOrientation WHERE alias='${req.body.alias}';`;
-  const secretCode = secretCodeGenerator();
+  const secretCode = secretCodeGenerator(1000, 9999);
   conn.query(querySelect, (err, result) => {
     if (result.length > 0) {
       console.log("benne van az adat");
@@ -81,7 +81,7 @@ app.delete('/api/links/:id', function(req, res) {
       if (req.body.secretCode == find[0].secretCode) {
         const queryDelete = `DELETE FROM TestOrientation WHERE id ='${req.params.id}';`;
         conn.query(queryDelete, (err, deleted) => {
-          console.log(deleted);
+          //console.log(deleted);
         })
         //console.log('204');
         res.sendStatus(204);

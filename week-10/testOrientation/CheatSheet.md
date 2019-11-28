@@ -13,8 +13,14 @@
 ## 2. copy and run .sh files
 * [ ] copy .sh files from week-10/orientation folder
 * [ ] run in console "sh ......"
+* [ ] after package.json is instaled, rewrite this part:
+```
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+```
 
-## 2. Create MySQL Database
+## 3. Create MySQL Database
 * [ ] Go to: https://wtools.io/generate-sql-create-table
 * [ ] Create table and these columns:
   * [ ] id: INT, auto increment, unsigned, NOT "allow null", KEY tick
@@ -28,7 +34,7 @@
   * [ ] copy the link from the website
   * [ ] exit;
 
-## 3. Create index.html
+## 4. Create index.html
 * [ ] use html:5 auto completion
 * [ ] head: `<link rel="stylesheet" href="../assets/style.css">`
 * [ ] if a message has to be shown, create DIV or something: 
@@ -48,8 +54,24 @@ see orientation example index.html
 * [ ] add script at the end of body tag to connect frontend html and js together: 
   * `<script type="text/javascript" src="./index.js"></script>`
 
-## 4. CSS tips if it is needed
+## 5. CSS tips if it is needed
 * to set text center: "text-align: center"
 * to set a div or box center: "margin: 0 auto;"
 
-## 5. 
+## 6. Create the server file in the main folder
+* [ ] touch server.js
+```
+'use strict'
+
+const app = require('./server/routes');
+
+app.listen(process.env.PORT, ()=> {
+  console.log(`Server is running on Port ${process.env.PORT}`);
+});
+```
+
+## 7. Create db.js for Database
+* [ ] touch db.js
+
+## 8. Create routes.js for endpoints
+* [ ] touch routes.js

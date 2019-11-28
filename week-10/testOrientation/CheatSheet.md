@@ -242,5 +242,5 @@ button.addEventListener('click', () => {
 });
 ```
 * if (alias.validity.valid && url.validity.valid) = VALIDÁLJA hogy TYPEnak(html) megfelelő cuccot írtunk be. (e-mailhez e-mail formátumot, url-hez url formátum http:// stb....)
-* ha amit beírunk akkor a .then(responseData) üres JSON-t ad vissza és nem tud vele dolgozni akkor "error" van és így lép át a .catch-be
+* ha amit beírunk aliast nem létezik, így nem találja meg, akkor a .then(responseData) üres JSON-t ad vissza és nem tud vele dolgozni akkor "error" van és így lép át a .catch-be
 * ha nem jó amit beírunk(nem valid) akkor az ELSE lép életbe

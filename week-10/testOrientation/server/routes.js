@@ -60,17 +60,40 @@ app.get('/a/:alias', function(req, res) {
     if (result.length > 0) {
       const queryString = `UPDATE TestOrientation SET hitCount = hitCount + 1 WHERE alias='${req.params.alias}';`;
       conn.query(queryString, (err, update) => {
+        //console.log(update);
       });
       const query = `SELECT * FROM TestOrientation WHERE alias='${req.params.alias}';`;
       conn.query(query, (err, post) => {
-        console.log(post[0].url);
+        //console.log(post[0].url);
         res.redirect(post[0].url);
       });
     } else {
       //console.log('nincs benne');
-      res.status(404);
+      res.sendStatus(404);
     }
   }); 
+});
+
+app.delete('/api/links/:id', function(req, res) {
+  const queryFindId = `SELECT id, secretCode FROM TestOrientation WHERE id='${req.params.id}';`;
+  conn.query(queryFindId, (err, find) => {
+    if (find.length > 0) {
+      if (req.body.secretCode == find[0].secretCode) {
+        const queryDelete = `DELETE FROM TestOrientation WHERE id ='${req.params.id}';`;
+        conn.query(queryDelete, (err, deleted) => {
+          console.log(deleted);
+        })
+        //console.log('204');
+        res.sendStatus(204);
+      } else {
+        //console.log('exists but the provided secret code does not match');
+        res.sendStatus(403);
+      }
+    } else {
+      //console.log('404');
+      res.sendStatus(404);
+    }
+  })
 });
 
 module.exports = app;

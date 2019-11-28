@@ -176,8 +176,31 @@ app.get('/a/:alias', function(req, res) {
         res.redirect(post[0].url);
       });
     } else {
-      res.status(404);
+      res.sendStatus(404);
     }
   }); 
 });
 ```
+* [ ] DELETE /api/links/{id}
+```
+app.delete('/api/links/:id', function(req, res) {
+  const queryFindId = `SELECT id, secretCode FROM TestOrientation WHERE id='${req.params.id}';`;
+  conn.query(queryFindId, (err, find) => {
+    if (find.length > 0) {
+      if (req.body.secretCode == find[0].secretCode) {
+        const queryDelete = `DELETE FROM TestOrientation WHERE id ='${req.params.id}';`;
+        conn.query(queryDelete, (err, deleted) => {
+          console.log(deleted);
+        })
+        res.sendStatus(204);
+      } else {
+        //console.log('exists but the provided secret code does not match');
+        res.sendStatus(403);
+      }
+    } else {
+      res.sendStatus(404);
+    }
+  })
+});
+```
+## 9. Create index.js frontend

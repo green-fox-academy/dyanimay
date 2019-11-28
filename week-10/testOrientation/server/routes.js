@@ -54,4 +54,23 @@ app.post("/api/links", jsonParser, function(req, res) {
   });
 });
 
+app.get('/a/:alias', function(req, res) {
+  const querySelect = `SELECT alias FROM TestOrientation WHERE alias='${req.params.alias}';`;
+  conn.query(querySelect, (err, result) => {
+    if (result.length > 0) {
+      const queryString = `UPDATE TestOrientation SET hitCount = hitCount + 1 WHERE alias='${req.params.alias}';`;
+      conn.query(queryString, (err, update) => {
+      });
+      const query = `SELECT * FROM TestOrientation WHERE alias='${req.params.alias}';`;
+      conn.query(query, (err, post) => {
+        console.log(post[0].url);
+        res.redirect(post[0].url);
+      });
+    } else {
+      //console.log('nincs benne');
+      res.status(404);
+    }
+  }); 
+});
+
 module.exports = app;

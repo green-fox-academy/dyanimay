@@ -51,7 +51,7 @@ see orientation example index.html
   <button type="button" class="button">Submit</button>
 </form>
 ```
-  * "type" is for the validation!! It can be text/e-mail/url/tel
+  * "type" is for the VALIDATION!! It can be text/e-mail/url/tel
 * [ ] add script at the end of body tag to connect frontend html and js together: 
   * `<script type="text/javascript" src="./index.js"></script>`
 
@@ -82,10 +82,10 @@ const mysql = require('mysql');
 require('dotenv').config();
 
 let conn = mysql.createConnection({
-  host: process.env.host,
-  user: process.env.user,
-  password: process.env.password,
-  database: process.env.database
+  host: process.env.DB_HOST,
+  user: process.env.DB_USER,
+  password: process.env.DB_PASS,
+  database: process.env.DB_NAME
 });
 
 conn.connect(function(err) {
@@ -109,9 +109,56 @@ const app = express();
 app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 let jsonParser = bodyParser.json();
-app.use(express.static('views'));
+app.use(express.static('views')); //for html page
+app.use('/assets', express.static('assets')); //for css
 
 //endpoints are here
 
 module.exports = app;
+```
+* [ ] when the task says: "the main page should be rendered", write this:
+```
+app.get("/", (req, res) => {
+  res.sendFile(__dirname + "/views/index.html");
+  res.status(200);
+});
+```
+* [ ] GET /api/links
+```
+app.get("/api/links", jsonParser, function(req, res) {
+  const query = `SELECT id, url, alias, hitCount FROM TestOrientation;`;
+  conn.query(query, (err, post) => {
+    res.setHeader("Content-type", "application/json");
+    res.status(200);
+    res.send(JSON.stringify(post));
+  });
+});
+```
+* [ ] POST /api/links + secretCode generator
+```
+function secretCodeGenerator() {
+  return Math.floor(Math.random() * Math.floor(9999) + 1000)
+}
+
+app.post("/api/links", jsonParser, function(req, res) {
+  res.setHeader("Content-type", "application/json", 'text/html');
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  const querySelect = `SELECT alias FROM TestOrientation WHERE alias='${req.body.alias}';`;
+  const secretCode = secretCodeGenerator();
+  conn.query(querySelect, (err, result) => {
+    if (result.length > 0) {
+      console.log("benne van az adat");
+      res.sendStatus(400);
+    } else {
+      const queryAdd = `INSERT INTO TestOrientation (url, alias, hitCount, secretCode) VALUES ('${req.body.url}', '${req.body.alias}', 0, ${secretCode});`;
+      conn.query(queryAdd, (err, result) => {
+        const query = `SELECT * FROM TestOrientation WHERE alias='${req.body.alias}';`;
+        conn.query(query, (err, post) => {
+          res.status(200);
+          res.send(post);
+        });
+      });
+    }
+  });
+});
 ```

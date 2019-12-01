@@ -9,8 +9,8 @@ app.get('/', function (req, res){
   res.sendFile(__dirname + '/index.html');
 });
 
-// app.get('/about', function (req, res){
-//   res.send('This is me');
-// });
+app.get('/about', function (req, res){
+  res.send('This is me');
+});
 
 app.listen(PORT);

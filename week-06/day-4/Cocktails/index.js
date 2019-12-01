@@ -16,12 +16,21 @@ const alcoholList = ['gin', 'vodka', 'rum', 'tequila'];
 
 // set the view engine to ejs
 app.set('view engine', 'ejs');
-
+app.use('/static', express.static('static'));
 
 app.get('/', function(req, res){
-    res.render('home', {
-      todos
-    });
+  let alcohol = req.query.alcohol;
+    if (alcohol != undefined) {
+      res.render('home', { 
+        cocktails: cocktails.filter(e => {
+          return e.contains.includes(alcohol)
+        }), 
+        alcohols: alcoholList});
+    } else {
+      res.render('home', {
+        cocktails: cocktails, 
+        alcohols: alcoholList});
+    }
   }
 )
 

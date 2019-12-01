@@ -2,19 +2,36 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>My To Do list</title>
+    <title>Cocktails</title>
+    <link rel="stylesheet" type="text/css" href="/static/styles.css">
   </head>
   <body>
-    <h1>Things to do today:</h1>
-    <ul>
-      <!-- <% for (let i = 0; i < todos.length; i++){ %>
-        <li>jók a feladat lerások</li>
-      <% }; %> -->
-    </ul>
-    <ul>
-      <% todos.forEach(function(todoListaElemei){ %>
-        <li><%= todoListaElemei %></li>
-      <% }); %>
-    </ul>
+    <div class='wrapper'>
+	    <h1>Cocktails</h1>
+			<ul class='alcohol-list'>
+				<li><a href='/'>ALL</a></li>
+				<% for (let i = 0; i < alcohols.length; i++) { %>
+				<li><a href='/?drink=<%=alcohols[i]%>'><%=alcohols[i].toUpperCase()%></a></li>
+				<% } %>
+			</ul>
+			<div class='container'>
+				<div class='list-item' id='header'>
+					<section class='left'><h2>NAME</h2></section>
+					<h2>PRICE</h2>
+				</div>
+					<% for(let i = 0; i < cocktails.length; i++){ %>
+						<div class='list-item'>
+							<section class=left>
+							<h3><%= cocktails[i].name %></h3>
+							<% if(!cocktails[i].isAlcoholic) { %>
+								<h5>(non-alcoholic)<h5>
+							<% } %>
+							<p><%= cocktails[i].contains %></p>
+							</section>
+							<h4><%= cocktails[i].price %> </h4>
+						</div>
+						<% } %>
+			</div>
+		</div>
   </body>
 </html>

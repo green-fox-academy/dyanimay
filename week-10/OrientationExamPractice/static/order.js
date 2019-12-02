@@ -6,9 +6,9 @@ console.log({id});
 
 //send the request with that id to the backend
 
-fetch(`/api/orders/${id}`).then((response) => {
-  return response.json();
-}).then((responseBody) => {
+fetch(`/api/orders/${id}`)
+  .then((response) => response.json())
+  .then((responseBody) => {
   document.querySelector('.order').innerHTML = `
   <p>${responseBody.name}</p>
   <p>${responseBody.address}</p>
@@ -17,7 +17,7 @@ fetch(`/api/orders/${id}`).then((response) => {
   console.log((responseBody));
   console.log(responseBody.address);
 }).catch((error) => {
-  console.log(error);
+  console.log(error)
 });
 
 const xhr = new XMLHttpRequest;

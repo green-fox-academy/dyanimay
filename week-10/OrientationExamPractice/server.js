@@ -24,9 +24,9 @@ conn.connect(function(err) {
 });
 
 //The main page should be rendered
-// app.get('/', (req, res) => {
-//   res.sendFile(__dirname + '/index.html');
-// });
+app.get('/', (req, res) => {
+  res.sendFile(__dirname + '/index.html');
+});
 
 //GET /order/{id}
 app.get('/order/:id', (req,res) => {

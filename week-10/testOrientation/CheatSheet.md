@@ -118,18 +118,18 @@ module.exports = app;
 ```
 * [ ] when the task says: "the main page should be rendered", write this:
 ```
-app.get("/", (req, res) => {
-  res.sendFile(__dirname + "/views/index.html");
+app.get('/', (req, res) => {
   res.status(200);
+  res.sendFile(__dirname + '/views/index.html');
 });
 ```
 * [ ] GET /api/links
 ```
-app.get("/api/links", jsonParser, function(req, res) {
+app.get('/api/links', jsonParser, function(req, res) {
   const query = `SELECT id, url, alias, hitCount FROM TestOrientation;`;
   conn.query(query, (err, post) => {
-    res.setHeader("Content-type", "application/json");
-    res.status(200);
+    res.setHeader('Content-type', 'application/json');
+    res.status(200); ?? ez nem kell?
     res.send(JSON.stringify(post));
   });
 });
@@ -140,21 +140,21 @@ function secretCodeGenerator() {
   return Math.floor(Math.random() * Math.floor(9999) + 1000)
 }
 
-app.post("/api/links", jsonParser, function(req, res) {
-  res.setHeader("Content-type", "application/json", 'text/html');
+app.post('/api/links', jsonParser, function(req, res) {
+  res.setHeader('Content-type', 'application/json', 'text/html');
   res.setHeader('Access-Control-Allow-Origin', '*');
   const querySelect = `SELECT alias FROM TestOrientation WHERE alias='${req.body.alias}';`;
   const secretCode = secretCodeGenerator();
   conn.query(querySelect, (err, result) => {
     if (result.length > 0) {
-      console.log("benne van az adat");
+      console.log('benne van az adat');
       res.sendStatus(400);
     } else {
       const queryAdd = `INSERT INTO TestOrientation (url, alias, hitCount, secretCode) VALUES ('${req.body.url}', '${req.body.alias}', 0, ${secretCode});`;
       conn.query(queryAdd, (err, result) => {
         const query = `SELECT * FROM TestOrientation WHERE alias='${req.body.alias}';`;
         conn.query(query, (err, post) => {
-          res.status(200);
+          res.status(200); ??ez sem kell?
           res.send(post);
         });
       });

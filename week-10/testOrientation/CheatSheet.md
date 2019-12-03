@@ -119,7 +119,7 @@ module.exports = app;
 * [ ] when the task says: "the main page should be rendered", write this:
 ```
 app.get('/', (req, res) => {
-  res.status(200);
+  res.status(200); ?? ez sem kell?
   res.sendFile(__dirname + '/views/index.html');
 });
 ```
@@ -151,7 +151,7 @@ app.post('/api/links', jsonParser, function(req, res) {
       res.sendStatus(400);
     } else {
       const queryAdd = `INSERT INTO TestOrientation (url, alias, hitCount, secretCode) VALUES ('${req.body.url}', '${req.body.alias}', 0, ${secretCode});`;
-      conn.query(queryAdd, (err, result) => {
+      conn.query(queryAdd, (err, result) => { ITT ÍRHATOM HOGY RES.SEND(RESULT) CSAK HOGY AZT KÜLDJEM VISSZA AMIT BEINSERTELTEM, AHELYETT HOGY MÉG SELECTELEM IS ÉS AZT A POSTOT SENDELEM?
         const query = `SELECT * FROM TestOrientation WHERE alias='${req.body.alias}';`;
         conn.query(query, (err, post) => {
           res.status(200); ??ez sem kell?

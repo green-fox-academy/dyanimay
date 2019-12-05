@@ -32,7 +32,9 @@ form.addEventListener('submit', (event) => {
     body: JSON.stringify({question: questionInput.value})
   })
   .then(() => window.location = '/')
-})
+});
+
+listRecentQuestions()
 
 // const btnAsk = document.querySelector('.button');
 // btnAsk.addEventListener('click', (e) => {
@@ -53,5 +55,3 @@ form.addEventListener('submit', (event) => {
 
 //   })
 // })
-
-listRecentQuestions()

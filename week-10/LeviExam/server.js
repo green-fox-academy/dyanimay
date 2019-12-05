@@ -33,18 +33,20 @@ app.get('/', (req, res) => {
 
 // GET /q/:id EZ CSAK RENDEREL JAVÍTSD!
 app.get('/q/:id', (req, res) => {
-  const id = req.params.id;
-  const queryQuestion = `SELECT * FROM questions WHERE id = ?`;
-  conn.query(queryQuestion, id, (err, questions) => {
-    if (err) {
-      res.status(500).send({ message: 'Can not connect to database' });
-      return;
-    } else if (questions[0] == undefined) {
-      res.send({ message: 'the question was not found' });
-    } else {
-      res.send(questions);
-    }
-  });
+  res.sendFile(__dirname + '/public/answer.html');
+  // nem ez volt a feladat de ez még hasznos lehet
+  // const id = req.params.id;
+  // const queryQuestion = `SELECT * FROM questions WHERE id = ?`;
+  // conn.query(queryQuestion, id, (err, questions) => {
+  //   if (err) {
+  //     res.status(500).send({ message: 'Can not connect to database' });
+  //     return;
+  //   } else if (questions[0] == undefined) {
+  //     res.send({ message: 'the question was not found' });
+  //   } else {
+  //     res.send(questions);
+  //   }
+  // });
 });
 
 // POST /api/questions
@@ -73,7 +75,7 @@ app.post('/api/questions/:id/answers', (req, res) => {
       res.status(500).send({ message: 'Can not connect to database' });
       return
     } else {
-      res.sendStatus(204); //ez kell?? mert írja a feladat
+      res.sendStatus(204);
     }
   });
 });

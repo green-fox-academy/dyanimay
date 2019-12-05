@@ -19,24 +19,39 @@ function listRecentQuestions() {
   })
 }
 
-const btnAsk = document.querySelector('.button');
-btnAsk.addEventListener('click', (e) => {
-  e.preventDefault();
-  fetch('http://localhost:8080/api/questions', {
+const form = document.querySelector('form');
+
+form.addEventListener('submit', (event) => {
+  const questionInput = document.querySelector('#questionInput');
+  event.preventDefault();
+  fetch('/api/questions', {
     method: 'POST',
-    body: JSON.stringify({
-      question
-    }),
     headers: {
       'content-type': 'application/json'
-    }
+    },
+    body: JSON.stringify({question: questionInput.value})
   })
-  .then(response => response.json())
-  .then(responsData => {
-    console.log(responsData);
-    listRecentQuestions();
-
-  })
+  .then(() => window.location = '/')
 })
+
+// const btnAsk = document.querySelector('.button');
+// btnAsk.addEventListener('click', (e) => {
+//   e.preventDefault();
+//   fetch('http://localhost:8080/api/questions', {
+//     method: 'POST',
+//     body: JSON.stringify({
+//       question
+//     }),
+//     headers: {
+//       'content-type': 'application/json'
+//     }
+//   })
+//   .then(response => response.json())
+//   .then(responsData => {
+//     console.log(responsData);
+//     listRecentQuestions();
+
+//   })
+// })
 
 listRecentQuestions()

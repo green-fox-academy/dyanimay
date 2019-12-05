@@ -28,10 +28,10 @@ conn.connect(function(err) {
 //  GET /
 app.get('/', (req, res) => {
   //res.setHeader('content-type');
-  res.send(__dirname + '/index.html');
+  res.sendFile(__dirname + '/index.html');
 });
 
-// GET /q/:id
+// GET /q/:id EZ CSAK RENDEREL JAVÍTSD!
 app.get('/q/:id', (req, res) => {
   const id = req.params.id;
   const queryQuestion = `SELECT * FROM questions WHERE id = ?`;
@@ -103,7 +103,7 @@ app.get('/api/questions/:id', (req, res) => {
 });
 
 // GET /api/questions/
-app.get('/api/questions/', (req, res) => {
+app.get('/api/questions', (req, res) => {
   if (req.query.limit && req.query.offset) {
     let limit = req.query.limit;
     let offset = req.query.offset;

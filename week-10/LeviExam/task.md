@@ -19,3 +19,13 @@ GET /q/:id
 - if the offset query parameter is set then it will skip the first X questions e.g. GET /api/questions?limit=5&offset=5 will send from the 5th to the 10th question -->
 
 GET / and GET /q/:id are the frontend part of this applicaton and the /api ones are the backend
+valami
+```
+valami
+valami
+```
+vim task.md
+shift-g to jump to last line
+a or o to start write
+write the right solution then escape and :wq
+

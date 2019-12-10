@@ -11,10 +11,15 @@ export class AddressCardComponent implements OnInit {
   // @Input('name') userName: string;
   // @Input('address') address: string;
   @Input('user') user: User;
+  isCollapsed : boolean = true;
 
   constructor() { 
   }
   
+  toggleCollapse() {
+    this.isCollapsed = !this.isCollapsed;
+  }
+
   ngOnInit() {
     // this.user = {
     //   name: this.userObj.name,

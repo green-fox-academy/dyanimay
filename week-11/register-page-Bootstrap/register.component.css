@@ -1,0 +1,45 @@
+form {
+  padding-top: 20px;
+}
+
+nav > h1 {
+  color: blue;
+}
+
+.card {
+  margin-top: 5%;
+}
+
+.form-group {
+  margin: auto;
+}
+
+.form-group > label {
+  color: red;
+}
+
+.form-group > h3, .form-group > h4 {
+  text-align: center;
+  margin: 10px 0px;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.btn {
+  width: 48%;
+}
+
+.buttons > a {
+  margin: 0px auto;
+}
+
+.form-group > h3 {
+  color: green;
+}
+
+.form-group > h4 {
+  color: red;
+}

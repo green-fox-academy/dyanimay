@@ -9,48 +9,30 @@
   <title>Register page</title>
 </head>
 <body>
-    <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+    <nav class="navbar navbar-expand-sm">
         <div class="container">
-        <h1 class="navbar-text">Hero Manager</h1>
-        <li class="navbar-nav ml-auto">
-          <a class="nav-link" href="#">Login</a>
-        </li>
-        <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-    
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Login</a>
-                </li>
-            </ul>
-        </div> -->
+          <h1 class="navbar-text">Hero Manager</h1>
+          <li class="navbar-nav ml-auto">
+            <a type="button" class="nav-link" href="#">Login</a>
+          </li>
         </div>
     </nav>
     <main class="my-form">
         <div class="row justify-content-center">
-          <div class="col-10" style="max-width: 500px;">
             <div class="card">
               <h1 class="card-header text-center">Register</h1>
               <form name="my-form">
                 <div class="form-group col-sm-10">
-                  <div class="">
                     <input type="text" name="username" class="form-control" placeholder="Username">
-                  </div>
-                  <label for="username" class="col-form-label">Username is already in use.</label>
+                    <p for="username" class="col-form-label">Username is already in use.</p>
                 </div>
                 <div class="form-group col-sm-10">
-                  <div class="">
                     <input type="password" name="password" class="form-control" placeholder="Password">
-                  </div>
-                  <label for="password" class="col-form-label">Password must be minimum of 8 characters. </label>
+                    <p for="password" class="col-form-label">Password must be minimum of 8 characters. </p>
                 </div>
                 <div class="form-group col-sm-10">
-                  <div class="">
                     <input type="password" name="confirmPsw" class="form-control" placeholder="Password">
-                  </div>
-                  <label for="confirmPsw" class="col-form-label">Password confirmation must be the same.</label>
+                    <p for="confirmPsw" class="col-form-label">Password confirmation must be the same.</p>
                 </div>
                 <div class="form-group buttons col-sm-10">
                     <button type="submit" class="btn btn-secondary">Cancel</button>
@@ -61,7 +43,6 @@
                 </div>
               </form>
             </div>
-          </div>
         </div>
     </main>
 </body>

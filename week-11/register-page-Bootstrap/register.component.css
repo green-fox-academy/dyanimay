@@ -2,6 +2,10 @@ form {
   padding-top: 20px;
 }
 
+.row {
+  margin: 0px;
+}
+
 .navbar {
   background-color: whitesmoke;
   border-bottom: 1px solid black;
@@ -41,7 +45,7 @@ label, .form-group > p {
 }
 
 .btn {
-  width: 48%;
+  width: 49%;
 }
 
 .buttons > a, .form-group {
@@ -55,7 +59,6 @@ label, .form-group > p {
 @media only screen and (max-width: 416px) {
   .card {
     width: 90%;
-    box-shadow: 0px 0px;
   }
 
   nav > div > li {
@@ -64,6 +67,107 @@ label, .form-group > p {
   }
 
   h1 {
-    font-size: 2em;
+    font-size: 1.5em;
   }
 }
+
+/* -------- OLD --------
+// .registerForm{
+  //   display: flex;
+  //   flex-flow: column;
+  //   width: 400px;
+  //   height: 450px;
+  //   margin: 0 auto;
+  //   border: 1px solid black;
+  //   align-items: center;
+  // }
+  
+  // .cancelButton, .registerForm {
+  //   background-color: rgb(238, 238, 238);
+  // }
+  
+  // p, .formField > input, button {
+  //   font-size: 25px;
+  //   font-family: 'Almendra', serif;
+  // }
+  
+  // label {
+  //   font-size: 18px;
+  //   color: red;
+  //   margin: 0px;
+  // }
+  
+  // .formField > * {
+  //   display: block;
+  // }
+  
+  // .formField > input {
+  //   height: 48px;
+  //   width: 99%;
+  //   border: 1px solid black;
+  // }
+  
+  // .formField {
+  //   min-height: 80px;
+  //   width: 80%;
+  // }
+  
+  // .interactionsCont{
+  //   display: flex;
+  //   flex-flow: row;
+  //   width: 70%;
+  //   justify-content: space-between;
+  // }
+  
+  // button{
+  //   width: 113px;
+  //   height: 38px;
+  //   background-color: rgb(189, 214, 172);
+  //   border: 1px solid black;
+  // }
+  
+  // button:hover {
+  //   cursor: pointer;
+  // }
+  
+  // .bottomMessage > p {
+  //   padding-top: 6%;
+  //   color: green;
+  //   margin: 0px;
+  // }
+  
+  // @media only screen and (max-width: 416px) {
+  //   .registerForm {
+  //     width: 98%;
+  //     height: 500px;
+  //   }
+  
+  //   .formField {
+  //     width: 95%;
+  //     margin: 0 auto;
+  //     height: 100px;
+  //   }
+  
+  //   input {
+  //     padding-right: 0px;
+  //   }
+  
+  //   label {
+  //     font-size: 18px;
+  //     padding-top: 10px;
+  //     letter-spacing: 0.5px;
+  //   }
+  
+  //   .interactionsCont{
+  //     display: flex;
+  //     flex-flow: row;
+  //     width: 95%;
+  //     justify-content: space-between;
+  //   }
+  
+  //   button {
+  //     width: 49%;
+  //   }
+  
+  // }
+   */

@@ -23,6 +23,6 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     FormsModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [ AppComponent ]
 })
 export class AppModule { }

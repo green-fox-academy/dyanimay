@@ -1,0 +1,126 @@
+import { Component, OnInit } from '@angular/core';
+import { RegisterService } from '../../services/register/register.service';
+import { Router } from '@angular/router';
+
+@Component({
+  selector: 'app-register',
+  templateUrl: './register.component.html',
+  styleUrls: ['./register.component.scss']
+})
+export class RegisterComponent implements OnInit {
+
+  username: string;
+  password: string;
+  confirmPsw: string;
+  usernameError: string;
+  passwordError: string;
+  confirmPswError: string;
+  messageSuccess: string;
+  usernameStatus: boolean;
+  passwordStatus: boolean;
+  confirmPasswordStatus: boolean;
+
+  constructor(private registerService: RegisterService, private router: Router) { }
+
+  ngOnInit() { }
+
+  checkUsername(username: string): boolean {
+    return (username !== undefined && username.length > 0);
+  }
+
+  myValidateFunction(username: string): boolean {
+    const pattern = /^[A-Za-z0-9]\w{0,}$/;
+    return (pattern.test(username));
+  }
+
+  checkPassword(password: string): boolean {
+    return (password !== undefined && password.length > 7);
+  }
+
+  checkConfirmPassword(password: string, passwordAgain: string): boolean {
+    return (password !== undefined && passwordAgain !== undefined && password === passwordAgain);
+  }
+
+  checkStatus(usernameStatus: boolean, passwordStatus: boolean, confirmPasswordStatus: boolean): boolean {
+    return (usernameStatus === true && passwordStatus === true && confirmPasswordStatus === true);
+  }
+
+  registerUser() {
+    if (this.checkUsername(this.username) === false) {
+      this.usernameError = 'Username must be at least 1 character';
+      this.usernameStatus = false;
+    } else if (this.myValidateFunction(this.username) === false) {
+      this.usernameError = 'Username can not contain any special character';
+      this.usernameStatus = false;
+    } else {
+      this.usernameError = '';
+      this.usernameStatus = true;
+    }
+    if (this.checkPassword(this.password) === false) {
+      this.passwordError = 'Password must be at least 8 characters';
+      this.passwordStatus = false;
+    } else {
+      this.passwordError = '';
+      this.passwordStatus = true;
+    }
+    if (this.checkConfirmPassword(this.password, this.confirmPsw) === false) {
+      this.confirmPswError = 'Password confirmation must be the same';
+      this.confirmPasswordStatus = false;
+    } else {
+      this.confirmPswError = '';
+      this.confirmPasswordStatus = true;
+    }
+    if (this.checkStatus(this.usernameStatus, this.passwordStatus, this.confirmPasswordStatus) === true) {
+      this.registerService.sendRegister(this.username, this.password, this.confirmPsw).subscribe((response) => {
+        setTimeout(() => {
+          this.router.navigate(['/login']);
+        }, 1500);
+        this.messageSuccess = 'Your account has been created.';
+      }, error => {
+        if (error) {
+          this.usernameError = 'Username already exist';
+        }
+      });
+    }
+  }
+
+  cancelRegistration() {
+    this.router.navigate(['/login']);
+  }
+}
+
+EZ KÉNE:
+registerUser() {
+    this.registerStatus = true;
+    this.usernameError = '';
+    this.passwordError = '';
+    this.confirmPswError = '';
+    if (this.checkUsername(this.username) === false) {
+      this.usernameError = 'Username must be at least 1 character';
+      this.usernameStatus = false;
+    } else if (this.myValidateFunction(this.username) === false) {
+      this.usernameError = 'Username can not contain any special character';
+      this.usernameStatus = false;
+    }
+    this.passwordError = '';
+    if (this.checkPassword(this.password) === false) {
+      this.passwordError = 'Password must be at least 8 characters';
+      this.passwordStatus = false;
+    }
+    if (this.checkConfirmPassword(this.password, this.confirmPsw) === false) {
+      this.confirmPswError = 'Password confirmation must be the same';
+      this.confirmPasswordStatus = false;
+    }
+    if (this.registerStatus === true) {
+      this.registerService.sendRegister(this.username, this.password, this.confirmPsw).subscribe((response) => {
+        setTimeout(() => {
+          this.router.navigate(['/login']);
+        }, 1500);
+        this.messageSuccess = 'Your account has been created.';
+      }, error => {
+        if (error) {
+          this.usernameError = 'Username already exist';
+        }
+      });
+    }
+  }

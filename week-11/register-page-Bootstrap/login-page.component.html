@@ -9,11 +9,11 @@
   <title>Login page</title>
 </head>
 <body>
-  <nav class="navbar navbar-expand-sm loginNav">
-    <div class="container">
+  <nav class="navbar navbar-expand-sm">
+    <div class="container loginNav">
       <h1 class="navbar-text">Hero Manager</h1>
       <li class="navbar-nav ml-auto">
-        <a type="button" class="nav-link" href="#">Register</a>
+        <a type="button" class="nav-link" href="/register">Register</a>
       </li>
     </div>
   </nav>
@@ -23,24 +23,22 @@
         <h1 class="card-header text-center">Login</h1>
         <form name="my-form">
           <div class="form-group col-sm-10">
-            <input type="text" name="username" class="form-control" placeholder="Username">
-            <p for="username" class="col-form-label"> </p>
+            <input type="text" class="form-control" placeholder="Username" [(ngModel)]="usernameInput">
           </div>
           <div class="form-group col-sm-10">
-            <input type="password" name="password" class="form-control" placeholder="Password">
-            <p for="password" class="col-form-label"> </p>
+            <input type="password" class="form-control" placeholder="Password" [(ngModel)]="passwordInput">
           </div>
           <div class="form-group buttons col-sm-10">
-            <a class="nav-link" href="#">Registration</a>
-            <button type="submit" class="btn btn-primary">Login</button>
+            <a class="nav-link" href="/register">Registration</a>
+            <button (click)="sendLogin()" class="btn btn-primary">Login</button>
           </div>
-          <div class="form-group col-sm-10 successMessage" role="alert">
-            <p class="alert-heading">Wrong username or password!</p>
+          <div class="form-group col-sm-10 bottomMessage" role="alert">
+            <p class="alert-heading">{{loginMessage}}</p>
           </div>
         </form>
       </div>
     </div>
-  </main>
+  </main>  
 </body>
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
@@ -48,25 +46,15 @@
 </html>
 
 <!-- ----------------- OLD -----------------
-<div class="registerForm">
-  <h1>Registration</h1>
-  <div  class="formField">
-    <input type="text" name="username" [(ngModel)]="username" placeholder="Username" required minlength="1">
-    <label for="username" *ngIf="usernameError">{{usernameError}}</label>
-  </div>
-  <div  class="formField">
-    <input type="password" name="password" [(ngModel)]="password" placeholder="Password" required minlength="8">
-    <label for="password" *ngIf="passwordError">{{passwordError}}</label>
-  </div>
-  <div  class="formField">
-    <input type="password" name="confirmPsw" [(ngModel)]="confirmPsw" placeholder="Confirm password" required minlength="8">
-    <label for="confirmPsw" *ngIf="confirmPswError">{{confirmPswError}}</label>
-  </div>
+<h1 class="title">Hero Manager</h1>
+<div class="loginCont">
+  <h2 class="loginHeader">Login</h2>
+  <input class="inputField" placeholder="Username" [(ngModel)]="usernameInput">
+  <input class="inputField" placeholder="Password" [(ngModel)]="passwordInput" type="password">
   <div class="interactionsCont">
-    <button (click)="cancelRegistration()" class="cancelButton">Cancel</button>
-    <button (click)="registerUser()">Register</button>
+    <a href="/register" class="regLink btn">Registration</a>
+    <button class="loginButton" (click)="sendLogin()">Login</button>
   </div>
-  <div class="bottomMessage">
-    <p *ngIf="messageSuccess">{{messageSuccess}}</p>
-  </div>
-</div> -->
+  <p class="messageField" *ngIf="loginMessage">{{loginMessage}}</p>
+</div>
+ -->

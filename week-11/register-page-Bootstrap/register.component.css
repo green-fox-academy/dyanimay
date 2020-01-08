@@ -2,7 +2,7 @@ form {
   padding-top: 20px;
 }
 
-.loginPage .row {
+.registerPage .row, .registerNav .navbar-text {
   margin: 0px;
 }
 
@@ -25,14 +25,19 @@ form {
   box-shadow: 0px 0px 10px 0px #000;
 }
 
-label, .form-group > p {
+.form-group {
+  min-height: 73px;
+}
+
+.form-group > p {
   color: red;
   font-size: 0.9em;
 }
 
-.form-group > h3, .successMessage > p {
+.form-group > h5, .bottomMessage > p {
   text-align: center;
-  margin: 10px 0px;
+  margin: 0px 0px;
+  padding: 1rem;
 }
 
 .buttons {
@@ -44,25 +49,25 @@ label, .form-group > p {
   width: 49%;
 }
 
-.buttons > a, .form-group {
+.buttons > a, .form-group, .buttons {
   margin: 0px auto;
 }
 
-.form-group > h3 {
+.form-group > h5 {
   color: green;
 }
 
 @media only screen and (max-width: 416px) {
-  .loginPage .card {
+  .registerPage .card {
     width: 90%;
   }
 
-  .loginNav > li {
+  .registerNav > li {
     visibility: hidden;
     position: absolute;
   }
 
-  .loginNav {
+  .registerNav {
     justify-content: center;
   }
 

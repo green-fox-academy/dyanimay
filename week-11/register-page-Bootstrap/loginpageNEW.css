@@ -1,0 +1,141 @@
+.loginPage .row, .loginNav .navbar-text {
+  margin: 0px;
+}
+
+.navbar {
+  background-color: whitesmoke;
+  border-bottom: 1px solid black;
+}
+
+.card-header {
+  background-color: whitesmoke
+}
+
+.nav-link {
+  color: black;
+}
+
+.card {
+  width: 420px;
+  margin-top: 5%;
+  box-shadow: 0px 0px 10px 0px #000;
+}
+
+label, .form-group > p {
+  color: red;
+  font-size: 0.9em;
+}
+
+.form-group > h3, .bottomMessage > p {
+  text-align: center;
+  margin: 10px 0px;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.btn {
+  width: 49%;
+}
+
+.buttons > a, .form-group {
+  margin: 0px auto;
+}
+
+.form-group > h3 {
+  color: green;
+}
+
+.form-group {
+  margin-top: 5%;
+}
+
+.bottomMessage {
+  height: 31px;
+  margin-top: 0px;
+}
+
+@media only screen and (max-width: 416px) {
+  .loginPage .card {
+    width: 90%;
+  }
+
+  .loginNav > li {
+    visibility: hidden;
+    position: absolute;
+    color:green;
+  }
+
+  .loginNav {
+    justify-content: center;
+  }
+
+  h1 {
+    font-size: 1.5em;
+  }
+}
+
+/* // .title{
+//   position: fixed;
+//   top: 25%;
+//   left: 50%;
+//   transform: translate(-50%,-50%);
+// }
+
+// .loginCont{
+//   display: flex;
+//   flex-flow: column;
+//   width: 400px;
+//   height: 300px;
+//   border: 1px solid black;
+//   background-color: rgb(238, 238, 238);
+//   align-items: center;
+//   position: fixed;
+//   top: 50%;
+//   left: 50%;
+//   transform: translate(-50%,-50%);
+// }
+
+// .inputField{
+//   width: 60%;
+//   height: 48px;
+//   margin: 5px;
+//   min-width: 200px;
+//   border: 1px solid black;
+// }
+
+// .loginHeader{
+//   margin: 20px auto 0;
+// }
+
+// .interactionsCont{
+//   display: flex;
+//   flex-flow: row;
+//   width: 60%;
+//   justify-content: space-between;
+// }
+
+// .loginButton{
+//   width: 113px;
+//   height: 38px;
+//   background-color: rgb(189, 214, 172);
+//   border: 1px solid black;
+//   font-family : inherit;
+//   font-size: 1em;
+// }
+
+// .messageField{
+//   height: 10px;
+//   color: red;
+// }
+
+// .regLink{
+//   text-decoration: none;
+//   align-self: flex-end;
+// }
+
+// ::placeholder{
+//   font-family: 'Almendra', serif;
+//   } */

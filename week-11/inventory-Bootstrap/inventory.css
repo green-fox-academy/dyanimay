@@ -1,0 +1,41 @@
+.row {
+  margin: 2%;
+  font-size: 3vh;
+}
+
+.section {
+  min-height: 80vh;
+  border: 1px solid black;
+  padding: 1%;
+  line-height: 1.5;
+}
+
+.picture {
+  min-height: 75vh;
+  max-height: auto;
+}
+
+img {
+  height: 80%;
+}
+
+.row > div {
+  height: 80;
+}
+
+button {
+  width: 100%;
+}
+
+.characterName {
+  text-align: center;
+  margin: 0 auto;
+}
+
+.item-detail {
+  margin-top: 2%;
+}
+
+h4, button {
+  text-transform: uppercase;
+}

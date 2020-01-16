@@ -1,0 +1,11 @@
+.box {
+  overflow-y: auto;
+  max-height: 90%;
+}
+
+@media only screen and (max-width: 416px) {
+  .box {
+    max-height: 90%;
+    overflow-y: auto;
+  }
+}

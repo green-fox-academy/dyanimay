@@ -1,0 +1,11 @@
+<h4>Items:</h4>
+<div class="box list-group list-group-flush" id="list-tab" role="tablist">
+  <a
+    class="list-group-item list-group-item-action"
+    *ngFor="let equipment of inventory"
+    id="list-wep1-list"
+    data-toggle="list"
+    href="#item"
+    (click)="valueChanged(equipment)"
+    >{{ equipment.name }}</a>
+</div>

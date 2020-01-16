@@ -1,0 +1,56 @@
+.Container {
+  height: 85vh;
+}
+
+.row {
+  margin: 1%;
+  font-size: 1.7vw;
+  height: 98%;
+}
+
+.section, .sectionEquip, .sectionInventory {
+  max-height: 95%;
+  padding: 1%;
+}
+
+img {
+  height: 90%;
+  width: 100%;
+  background: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.characterName {
+  text-align: center;
+}
+
+h4 {
+  text-transform: uppercase;
+  margin: 2% 0;
+}
+
+@media only screen and (max-width: 577px) {
+  .desktop {
+    display: none;
+  }
+  
+  .Container {
+    display: flex;
+    height: 88vh;
+    margin: 0px;
+  }
+
+  .row {
+    width: 98%;
+    font-size: 2.5vh;
+  }
+
+  .sectionEquip {
+    height: 30%;
+  }
+
+  .sectionInventory {
+    height: 70%;
+  }
+}

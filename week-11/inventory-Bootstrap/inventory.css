@@ -5,9 +5,14 @@
 
 .section {
   min-height: 80vh;
-  border: 1px solid black;
+  border: 0px solid black;
   padding: 1%;
   line-height: 1.5;
+}
+
+.box {
+  overflow-y: scroll;
+  max-height: 75vh;
 }
 
 .picture {
@@ -32,10 +37,35 @@ button {
   margin: 0 auto;
 }
 
-.item-detail {
+.tab-content {
   margin-top: 2%;
 }
 
 h4, button {
   text-transform: uppercase;
+  margin: 2% 0;
+}
+
+@media only screen and (max-width: 416px) {
+  .desktop {
+    display: none;
+  }
+
+  .section {
+    min-height: 20vh;
+    max-height: 50vh;
+  }
+
+  .top {
+    top: 0;
+  }
+
+  .bottom {
+    bottom: 0;
+    max-height: 30vh;
+  }
+
+  .box {
+    max-height: 45vh;
+  }
 }

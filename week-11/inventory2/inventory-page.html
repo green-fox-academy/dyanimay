@@ -1,0 +1,18 @@
+<div class="Container" *ngIf='_hero'>
+    <div class="row">
+      <div class="col-sm-3 section desktop">
+        <img src="{{ _hero.bigImage }}" />
+        <h4 class="characterName">{{ _hero.name }}</h4>
+      </div>
+      <div class="col-sm-3 section desktop">
+        <!-- <app-equipped-inventory></app-equipped-inventory> -->
+      </div>
+      <div class="col-sm-3 sectionInventory">
+        <app-inventory [inventory]="_heroInventory" (valueChange)="showSelectedItem($event)"></app-inventory>
+      </div>
+      <div class="col-sm-3 sectionEquip">
+        <!-- <app-equip-button></app-equip-button>
+        <app-item-detail [selectedItem]="selectedItem"></app-item-detail> -->
+      </div>
+    </div>
+  </div>

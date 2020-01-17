@@ -1,6 +1,7 @@
 <div class="tab-content">
     <div class="tab-pane fade" *ngIf="selectedItem" id="item" role="tabpanel">
-      <h4>{{selectedItem.type}}</h4>
+      <h4>{{selectedItem.name}}</h4>
+      <p>{{selectedItem.type}}</p>
         <li *ngFor="let modifiers of selectedItem.modifiers">
           <span>{{modifiers.attributeName}}: </span><span>{{modifiers.value}}</span>
         </li>

@@ -32,7 +32,7 @@ function executeQueries(array, queries) {
   return array;
 }
 
-//array.sort((a, b) => b - a)[0] megtalálni a max itemet egy arrayben
+//array.sort((a, d) => d - a)[0] megtalálni a max itemet egy arrayden
 function findMax(array) {
   if (array.length == 0) {
     return null;
@@ -60,4 +60,27 @@ function reconstructValues(array) {
   return array;
 }
 
-console.log(manipulateArray(10, queries));
+//console.log(manipulateArray(10, queries));
+
+let a = 5;
+let d = 4;
+//let oldArray = [1, 2, 3, 4, 5];
+
+function arrayMaker(a) {
+  let array = [];
+  for(let i = 1; i <= a; ++i){
+    array.push(i);
+  }
+  return array;
+}
+
+function shifting(a, d) {
+  let oldArray = arrayMaker(a);
+  let newArray = [];
+  for (let j = 0; j < a; j++) {
+    let newIndex = ((j+ d) % a);
+    newArray[j] = oldArray[newIndex];
+  }
+  return newArray.join(' ');
+}
+console.log(shifting(a, d));
